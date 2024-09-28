@@ -202,6 +202,8 @@ section {
 #socials-container {
   display: flex;
   justify-content: center;
+  flex-direction: row;
+  align-items: center;
   margin-top: 1rem;
   gap: 1rem;
 }
@@ -210,7 +212,11 @@ section {
 
 .icon {
   cursor: pointer;
-  height: 2rem;
+  height: 40px;
+}
+
+.cli {
+  height: 50px !important;
 }
 
 /* BUTTONS */
