@@ -446,3 +446,68 @@ footer p {
   width: 300px;
   height: 250px;
 }
+
+/* EXPERIENCE SECTION */
+
+#experience {
+  position: relative;
+}
+
+.experience-details-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.experience-grid {
+  /* ! important */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.experience-item {
+  border: 1px solid black;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.experience-item:hover {
+  transform: translateY(-5px);
+}
+
+.experience-content h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.experience-content .company {
+  font-weight: bold;
+  color: #555;
+}
+
+.experience-content .date {
+  font-style: italic;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.experience-content ul {
+  padding-left: 1.5rem;
+  margin-bottom: 0;
+}
+
+.experience-content li {
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+@media screen and (max-width: 768px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+}
