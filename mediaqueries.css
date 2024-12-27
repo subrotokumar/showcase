@@ -101,3 +101,7 @@
     text-align: justify;
   }
 }
+
+.color-container:hover {
+  background-color: rgba(201, 239, 255, 0.269);
+}
