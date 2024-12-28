@@ -105,3 +105,51 @@
 .color-container:hover {
   background-color: rgba(201, 239, 255, 0.269);
 }
+
+.project-title{
+  margin: 0;
+}
+
+.project-title{
+  margin-top: 1rem;
+  /* color: cadetblue; */
+}
+
+
+.project-sub-title{
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: grey;
+  font-size: larger;
+}
+
+.techstack {
+  border-radius: 30%;
+  object-fit: cover;
+  height: 35px;
+  width: 35px;
+  margin-left: 10px;
+  /* border: 2px solid rgba(128, 128, 128, 0.578); */
+}
+
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+button {
+  height: 55px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.spacer{
+  width: 100%;
+}
