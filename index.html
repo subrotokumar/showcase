@@ -12,13 +12,15 @@
 
 <body>
   <nav id="desktop-nav">
-    <div class="logo">Subroto Kumar</div>
+    <div class="logo nav-links">Subroto Kumar</div>
     <div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="https://subrotokumar.github.io/aboutme-cli" target="_blank" onclick="toggleMenu()">Playground</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -35,6 +37,7 @@
         <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
         <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
         <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        <li><a href="https://subrotokumar.github.io/aboutme-cli" onclick="toggleMenu()">Playground</a></li>
       </div>
     </div>
   </nav>
@@ -45,7 +48,10 @@
     <div class="section__text">
       <p class="section__text__p1">Hello, I'm</p>
       <h1 class="title">Subroto Kumar</h1>
-      <p class="section__text__p2">Software Engineer</p>
+      <span class="typing-text section__text__p2"><span id="typed-text"></span><span class="cursor"></span></span>
+      <span class="section__text__p2">Engineer</span>
+      <br>
+      <br>
       <div class="btn-container">
         <button class="btn btn-color-2" onclick="window.open('assets/resume.pdf')">
           Download CV
@@ -57,12 +63,13 @@
       <div id="socials-container">
         <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
           onclick="location.href='https://linkedin.com/in/kumarsubroto'" />
-        <img src="./assets/terminal-white.png" alt="My Cli Portfolio" class="icon cli"
-          onclick="location.href='https://subrotokumar.github.io/aboutme-cli'" />
-        <img src="./assets/playstore.png" alt="Playstore" class="icon"
-          onclick="location.href='https://play.google.com/store/apps/developer?id=Subroto+Kumar&pli=1'" />
         <img src="./assets/github.png" alt="My Github profile" class="icon"
           onclick="location.href='https://github.com/subrotokumar'" />
+
+        <img src="./assets/playstore.png" alt="Playstore" class="icon"
+          onclick="location.href='https://play.google.com/store/apps/developer?id=Subroto+Kumar&pli=1'" />
+        <img src="./assets/terminal-white.png" alt="My Cli Portfolio" class="icon cli"
+          onclick="location.href='https://subrotokumar.github.io/aboutme-cli'" />
       </div>
     </div>
   </section>
@@ -70,33 +77,52 @@
     <p class="section__text__p1">Get To Know More</p>
     <h1 class="title">About Me</h1>
     <div class="section-container">
-      <div class="section__pic-container">
-        <img src="https://user-images.githubusercontent.com/95968368/183289298-957af452-56c4-452a-b742-e2287a480753.png"
-          height="250" alt="Profile picture" class="about-pic" />
-      </div>
       <div class="about-details-container">
         <div class="about-containers">
           <div class="details-container">
+            <img src="./assets/azure.png" alt="Azure icon" class="icon" />
+            <h3>Certification</h3>
+            <p><strong>3X.</strong> <em>Microsoft Azure Certified</em></p>
+            <p>Azure Developer Associate <strong>AZ-204</strong></p>
+            <p>Azure AI Engineer Associate <strong>AI-102</strong>
+            <p>Azure
+              foundational <strong>AZ-900</strong></p>
+          </div>
+          <div class="details-container">
             <img src="./assets/experience.png" alt="Experience icon" class="icon" />
             <h3>Experience</h3>
-            <p>Seamlessly integrating technology <br>and user experience with over 1.5 years of practical expertise.</p>
+            <p>Seamlessly integrating technology <br>and user experience with over 2.5 years of practical
+              expertise.</p>
+            <p><strong>Capgemini | LTI Mindtree | Ridobiko</strong></p>
           </div>
           <div class="details-container">
             <img src="./assets/education.png" alt="Education icon" class="icon" />
             <h3>Education</h3>
             <p><strong>B.Tech.</strong> in <em>Electronics and Communication</em></p>
             <p>Haldia Institute of Technology</p>
-            <p>Score: 8.98 CGPA</p>
+            <p>Score: <strong>8.98 / 10 CGPA | 2023 Passout</strong></p>
           </div>
+
         </div>
         <div class="text-container">
           <p>
-            Hey there! I’m 𝐒𝐮𝐛𝐫𝐨𝐭𝐨 𝐊𝐮𝐦𝐚𝐫, a seasoned software engineer with a knack for turning complex
-            requirements into sleek, functional, and aesthetically pleasing applications.
+            As a <strong>Backend</strong> and <strong>DevOps ∞ </strong> engineer, I specialize in designing services
+            that behave consistently — whether
+            they’re running in a staging cluster on a quiet Tuesday afternoon or handling production traffic during a
+            peak load spike. For me, resilience, observability, and predictability aren’t afterthoughts — they’re built
+            in from day one.
             <br><br>
-            My journey through the tech
-            world has armed me with a diverse toolkit of programming languages and technologies, allowing me to
-            seamlessly switch between the front-end and back-end realms.
+            My experience spans <strong>distributed systems</strong>, <strong>cloud-native infrastructure</strong>, and
+            <strong>production-ready
+              microservices</strong>.
+            I’ve scaled high-throughput systems, managed workloads across <strong>Kubernetes clusters</strong>, and
+            integrated LLMs into
+            real-world apps using AI Agentic and Retrieval-Augmented Generation (<strong>RAG</strong>)
+            techniques.
+            <br>
+            My goal? To build systems that make future developers nod in appreciation and think:
+            <strong>“Yep, they knew what they were doing.”</strong> 🚀
+
           </p>
         </div>
       </div>
@@ -108,7 +134,6 @@
     <h1 class="title">Experience</h1>
     <div class="experience-details-container">
       <!-- Work Experience-->
-
       <div class="experience-details-container">
         <div class="experience-grid">
 
@@ -118,7 +143,7 @@
                 <div>
                   <h3>Software Engineer</h3>
                   <p class="company">Capgemini</p>
-                  <p class="date">March, 2023 - Present</p>
+                  <p class="date">March, 2024 - Present</p>
                 </div>
                 <img src="./assets/work/capgemini.png" class="work-logo">
               </div>
@@ -207,35 +232,14 @@
               <img src="https://skillicons.dev/icons?i=go&theme=light" alt="Experience icon" class="icon" />
               <div>
                 <h3>Go</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=postgres&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>PostgreSQL</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=nodejs&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Node JS</h3>
                 <p>Experienced</p>
               </div>
             </article>
             <article>
-              <img src="https://skillicons.dev/icons?i=mongodb&theme=light" alt="Experience icon" class="icon" />
+              <img src="https://skillicons.dev/icons?i=python&theme=light" alt="Experience icon" class="icon" />
               <div>
-                <h3>Mongo</h3>
+                <h3>Python</h3>
                 <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=graphql&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Graphql</h3>
-                <p>Intermediate</p>
               </div>
             </article>
             <article>
@@ -245,18 +249,24 @@
                 <p>Intermediate</p>
               </div>
             </article>
-            <!-- New -->
             <article>
-              <img src="https://skillicons.dev/icons?i=flutter&theme=light" alt="Experience icon" class="icon" />
+              <img src="https://skillicons.dev/icons?i=azure&theme=light" alt="Experience icon" class="icon" />
               <div>
-                <h3>Flutter</h3>
+                <h3>Azure</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+            <article>
+              <img src="https://skillicons.dev/icons?i=gitlab&theme=light" alt="Experience icon" class="icon" />
+              <div>
+                <h3>GitLab</h3>
                 <p>Experienced</p>
               </div>
             </article>
             <article>
-              <img src="https://skillicons.dev/icons?i=javascript&theme=light" alt="Experience icon" class="icon" />
+              <img src="https://skillicons.dev/icons?i=jenkins&theme=light" alt="Experience icon" class="icon" />
               <div>
-                <h3>JavaScript</h3>
+                <h3>CI/CD</h3>
                 <p>Experienced</p>
               </div>
             </article>
@@ -271,7 +281,7 @@
               <img src="https://skillicons.dev/icons?i=kubernetes&theme=light" alt="Basic icon" class="icon" />
               <div>
                 <h3>Kubernates</h3>
-                <p>Basic</p>
+                <p>Intermediate</p>
               </div>
             </article>
             <article>
@@ -296,12 +306,63 @@
               </div>
             </article>
             <article>
+              <img src="https://skillicons.dev/icons?i=postgres&theme=light" alt="Experience icon" class="icon" />
+              <div>
+                <h3>PostgreSQL</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
               <img src="https://skillicons.dev/icons?i=redis&theme=light" alt="Experience icon" class="icon" />
               <div>
                 <h3>Redis</h3>
                 <p>Intermediate</p>
               </div>
             </article>
+            <article>
+              <img src="https://skillicons.dev/icons?i=linux&theme=light" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Linux</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <!-- New -->
+            <article>
+              <img src="https://skillicons.dev/icons?i=flutter&theme=light" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Flutter</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="https://skillicons.dev/icons?i=javascript&theme=light" alt="Experience icon" class="icon" />
+              <div>
+                <h3>JavaScript</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="https://skillicons.dev/icons?i=nodejs&theme=light" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Node JS</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="https://skillicons.dev/icons?i=mongodb&theme=light" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Mongo</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="https://skillicons.dev/icons?i=graphql&theme=light" alt="Experience icon" class="icon" />
+              <div>
+                <h3>GraphQL</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+
             <article>
               <img src="https://skillicons.dev/icons?i=typescript&theme=light" alt="Experience icon" class="icon" />
               <div>
@@ -332,16 +393,9 @@
               </div>
             </article>
             <article>
-              <img src="https://skillicons.dev/icons?i=solidity&theme=light" alt="Experience icon" class="icon" />
+              <img src="https://skillicons.dev/icons?i=nestjs&theme=light" alt="Experience icon" class="icon" />
               <div>
-                <h3>Solidity</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=androidstudio&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Android Studio</h3>
+                <h3>NestJs</h3>
                 <p>Intermediate</p>
               </div>
             </article>
@@ -355,193 +409,145 @@
     <p class="section__text__p1">Browse My Recent</p>
     <h1 class="title">Projects</h1>
     <div class="experience-details-container">
-      <div class="about-containers">
-        <!-- =========================== -->
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/project/lbx.png" alt="LBX" class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title">LBX</h2>
-          <h4 class="experience-sub-title project-sub-title">Your Go-To Load Balancer</h4>
-          <br>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/subrotokumar/helios'">
-              <span style="margin-right: 10px;">Github</span>
-              <div class="spacer"></div>
-              <img src="https://skillicons.dev/icons?i=go&theme=light" alt="go" class="techstack">
-              <img src="https://skillicons.dev/icons?i=docker&theme=light" alt="docker" class="techstack">
-            </button>
-          </div>
-        </div>
-        <!-- =========================== -->
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/project/helios.png" alt="Helios Api" class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title">Helios</h2>
-          <h4 class="experience-sub-title project-sub-title">Minimalist web framework for Python</h4>
+      <div class="projects-grid">
 
+        <!-- LBX -->
+        <div class="project-card fade-in">
+          <img src="./assets/project/lbx.png" alt="LBX" class="project-img" />
+          <h3>LBX</h3>
+          <p class="project-sub">LoadBalancer in Go that keeps your traffic flowing smoothly!</p>
+          <p class="project-desc">
+          <p class="project-desc">
+            Supporting service discovery, round-robin request distribution,
+            and automatic failover to ensure high availability and smooth traffic management.
+          </p>
+          </p>
+          <div class="tech-tags"><span>Go</span><span>Docker</span><span>Networking</span></div>
           <div class="btn-container">
             <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/subrotokumar/helios'">
-              <span style="margin-right: 10px;">Github</span>
-              <div class="spacer"></div>
-              <img src="https://skillicons.dev/icons?i=python&theme=light" alt="go" class="techstack">
-            </button>
+              onclick="location.href='https://github.com/subrotokumar/lbx'">GitHub</button>
+          </div>
+        </div>
 
-          </div>
-        </div>
-        <!-- =========================== -->
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/project/rover-server.png" alt="Rover" class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title">Rover</h2>
-          <h4 class="experience-sub-title project-sub-title">Redis inspired in-memory store</h4>
-          <br>
+        <!-- Helios -->
+        <div class="project-card fade-in">
+          <img src="./assets/project/helios.png" alt="Helios" class="project-img" />
+          <h3>Helios</h3>
+          <p class="project-sub">Minimalist Web Framework</p>
+          <p class="project-desc">A Python framework built from scratch Built on top of WSGI (Web Server Gateway
+            Interface), to simplify API development with routing and
+            middleware support.</p>
+          <div class="tech-tags"><span>Python</span><span>API</span><span>WSGI</span></div>
           <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/subrotokumar/rover'">
-              <span style="margin-right: 10px;">Github</span>
-              <div class="spacer"></div>
-              <img src="https://skillicons.dev/icons?i=go&theme=light" alt="go" class="techstack">
-              <img src="https://skillicons.dev/icons?i=docker&theme=light" alt="go" class="techstack">
-            </button>
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/subrotokumar/helios'">GitHub</button>
           </div>
         </div>
-      </div>
 
-      <div class=" about-containers">
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/project/comet.png" alt="Project 2" class="project-img" />
+        <!-- Rover -->
+        <div class="project-card fade-in">
+          <img src="./assets/project/rover-server.png" alt="Rover" class="project-img" />
+          <h3>Rover</h3>
+          <p class="project-sub">In-Memory Data Store</p>
+          <p class="project-desc">Redis-compatible in-memory key-value store. It aims to provide the simplicity and
+            speed of Redis while leveraging Go's powerful concurrency features. It is compatible with the RESP.</p>
+          <div class="tech-tags"><span>Go</span><span>In-memory</span><span>Cache</span><span>Concurrency</span>
           </div>
-          <h2 class="experience-sub-title project-title">Comet</h2>
-          <h4 class="experience-sub-title project-sub-title">Crypto & NFT Wallet</h4>
-          <br>
           <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/subrotokumar/comet'">
-              Github
-            </button>
             <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://play.google.com/store/apps/details?id=com.subrotokumar.comet'">
-              Play Store
-            </button>
+              onclick="location.href='https://github.com/subrotokumar/rover'">GitHub</button>
           </div>
         </div>
-        <!-- =========================== -->
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="https://github.com/subrotokumar/portfolio/blob/main/img/projects/kurumi.png?raw=true"
-              alt="Project 1" class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title">Kurumi</h2>
-          <h4 class="experience-sub-title project-sub-title">Unofficial anilist client</h4>
-          <br>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/subrotokumar/kurumi'">
-              Github
-            </button>
-            <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://play.google.com/store/apps/details?id=com.subrotokumar.kurumi'">
-              Play Store
-            </button>
-          </div>
-        </div>
-        <!-- =========================== -->
-        <div class="details-container color-container">
-          <div class="article-container">
-            <img src="./assets/project/game.png" alt="Project 2" class="project-img" />
-          </div>
-          <h2 class="experience-sub-title project-title">Moriko</h2>
-          <h4 class="experience-sub-title project-sub-title">Manga reader</h4>
-          <br>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/subrotokumar/moriko'">
-              <span style="margin-right: 10px;">Github</span>
-              <div class="spacer"></div>
-              <img src="https://skillicons.dev/icons?i=dart&theme=light" alt="dart" class="techstack">
-              <img src="https://skillicons.dev/icons?i=flutter&theme=light" alt="dart" class="techstack">
 
-            </button>
+        <!-- Comet -->
+        <div class="project-card fade-in">
+          <img src="./assets/project/comet.png" alt="Comet" class="project-img" />
+          <h3>Comet</h3>
+          <p class="project-sub">Crypto & NFT wallet</p>
+          <p class="project-desc">A secure cryptocurrency wallet with support for
+            wallet encryption, and ERC20 & NFT interaction. Provides a transaction facility,
+            tracks transaction history and offers a dedicated NFT explorer.</p>
+          <!-- <p class="project-role"><strong>Role:</strong> Backend Lead</p> -->
+          <div class="tech-tags">
+            <span>Flutter</span><span>Web3Dart</span><span>ERC20</span><span>ERC721</span>
+          </div>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/subrotokumar/comet'">GitHub</button>
           </div>
         </div>
+
+        <!-- Kurumi -->
+        <div class="project-card fade-in">
+          <img src="https://github.com/subrotokumar/portfolio/blob/main/img/projects/kurumi.png?raw=true" alt="Kurumi"
+            class="project-img" />
+          <h3>Kurumi</h3>
+          <p class="project-sub">Unofficial AniList Client</p>
+          <p class="project-desc">A sleek AniList client powered by GraphQL. Effortlessly discover and track anime and
+            manga with a clean UI. Includes personalized lists, detailed media info, and smooth user experience.
+          </p>
+          <!-- <p class="project-role"><strong>Role:</strong> Full Stack Developer</p> -->
+          <div class="tech-tags"><span>Flutter</span><span>GraphQL</span><span>Riverpod</span></div>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://play.google.com/store/apps/details?id=com.kurumi.animeapp'">Play
+              Store</button>
+          </div>
+        </div>
+
+        <!-- Moriko -->
+        <div class="project-card fade-in">
+          <img src="./assets/project/moriko.png" alt="Moriko" class="project-img" />
+          <h3>Moriko</h3>
+          <p class="project-sub">Your Pocket Manga Reader</p>
+          <p class="project-desc">A smooth and intuitive manga reader with support for high-quality images, bookmarking.
+            Designed for a distraction-free, immersive reading experience — all in your pocket.</p>
+          <!-- <p class="project-role"><strong>Role:</strong> App Developer</p> -->
+          <div class="tech-tags"><span>Flutter</span><span>API</span><span>Isar DB</span></div>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://play.google.com/store/apps/details?id=com.moriko.calmapp'">Play
+              Store</button>
+          </div>
+        </div>
+
+        <!-- Docsync -->
+        <div class="project-card fade-in">
+          <img src="./assets/project/docsync.png" alt="Docsync" class="project-img" />
+          <h3>Docsync</h3>
+          <p class="project-sub">Real-time Collaboration Tool</p>
+          <p class="project-desc">Google Docs-style web app supporting real-time text editing using Socket.IO.
+            Includes collaborative editing, and seamless syncing between users.
+          </p>
+          <!-- <p class="project-role"><strong>Role:</strong> Full Stack Dev</p> -->
+          <div class="tech-tags"><span>Flutter</span><span>Socket.io</span><span>Node.js</span><span>MongoDB</span>
+          </div>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/subrotokumar/docsync'">GitHub</button>
+          </div>
+        </div>
+
+        <!-- 1inch Dex Clone -->
+        <div class="project-card fade-in">
+          <img src="/assets/project/1inchdex.png" alt="1inch DEX" class="project-img" />
+          <h3>1Inch DEX</h3>
+          <p class="project-sub">1INCH DEX: Token Swap</p>
+          <p class="project-desc">A token swap application enabling seamless exchange of 13 crypto tokens with MetaMask
+            integration.
+            Built on top of the 1Inch aggregator.</p>
+          <!-- <p class="project-role"><strong>Role:</strong> Smart Contract Integrator</p> -->
+          <div class="tech-tags"><span>Web3</span><span>Solidity</span><span>React</span></div>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn"
+              onclick="location.href='https://github.com/subrotokumar/1inch-dex'">GitHub</button>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <!-- Project 2 -->
-    <div class="experience-details-container"></div>
-    <div class="about-containers">
-
-      <div class="details-container color-container">
-        <div class="article-container">
-          <img src="./assets/project/docsync.png" alt="docsync" class="project-img" />
-        </div>
-        <h2 class="experience-sub-title project-title">Docsync</h2>
-        <h4 class="experience-sub-title project-sub-title">Realtime Document Editor</h4>
-
-        <br>
-        <div class="btn-container">
-          <button class="btn btn-color-2 project-btn"
-            onclick="location.href='https://github.com/subrotokumar/docsync-server'">
-            Github
-            <div class="spacer"></div>
-            <img src="https://skillicons.dev/icons?i=flutter&theme=light" alt="dart" class="techstack">
-            <img src="https://skillicons.dev/icons?i=nodejs&theme=light" alt="dart" class="techstack">
-            <img src="https://skillicons.dev/icons?i=mongo&theme=light" alt="dart" class="techstack">
-            <img src="https://skillicons.dev/icons?i=prometheus&theme=light" alt="dart" class="techstack">
-            <img src="https://skillicons.dev/icons?i=grafana&theme=light" alt="dart" class="techstack">
-
-
-
-          </button>
-        </div>
-      </div>
-
-      <div class="details-container color-container">
-        <div class="article-container">
-          <img src="/assets/project/1inchdex.png" alt="Project 1" class="project-img" />
-        </div>
-        <h2 class="experience-sub-title project-title">1Inch Dex</h2>
-        <h4 class="experience-sub-title project-sub-title">Currency Exchange for Crypto Tokens</h4>
-
-        <br>
-        <div class="btn-container">
-          <button class="btn btn-color-2 project-btn"
-            onclick="location.href='https://github.com/subrotokumar/1inch-dex'">
-            Github
-          </button>
-          <button class="btn btn-color-2 project-btn"
-            onclick="location.href='https://fascinating-empanada-ff7997.netlify.app/'">
-            Webpage
-          </button>
-        </div>
-      </div>
-
-
-      <!-- <div class="details-container color-container">
-        <div class="article-container">
-          <img src="./assets/project/coinstate.png" alt="Project 3" class="project-img" />
-        </div>
-        <h2 class="experience-sub-title project-title">Coinstate: Crypto Price tracker</h2>
-        <div class="btn-container">
-          <button class="btn btn-color-2 project-btn"
-            onclick="location.href='https://github.com/subrotokumar/coinstate'">
-            Github
-          </button>
-          <button class="btn btn-color-2 project-btn"
-            onclick="location.href='https://play.google.com/store/apps/details?id=com.subrotokumar.cryptobook'">
-            Play Store
-          </button>
-        </div>
-      </div> -->
-
-
-    </div>
-    </div>
-    <!-- <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" /> -->
+    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
   </section>
   <section id="contact">
     <p class="section__text__p1">Get in Touch</p>
@@ -553,11 +559,11 @@
       </div>
       <div class="contact-info-container">
         <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-        <p><a href="https://www.linkedin.com/in/kumarsubroto">LinkedIn</a></p>
+        <p><a href="https://www.linkedin.com/in/kumarsubroto"> LinkedIn</a></p>
       </div>
       <div class="contact-info-container">
         <img src="./assets/github.png" alt="Github icon" class="icon contact-icon" />
-        <p><a href="https://github.com/subrotokumar">GitHub</a></p>
+        <p><a href="https://github.com/subrotokumar"> GitHub</a></p>
       </div>
     </div>
   </section>
