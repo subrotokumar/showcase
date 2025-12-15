@@ -7,9 +7,9 @@ function toggleMenu() {
 
 const roles = [
   "Software",
-  "Backend",
-  "Kubernetes",
-  "DevOps"
+  "🖥️Backend",
+  "☸️Kubernetes",
+  "♾️DevOps"
 ];
 
 const typedText = document.getElementById("typed-text");
