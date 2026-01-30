@@ -21,12 +21,44 @@
         <li><a href="#contact">Contact</a></li>
         <li><a href="https://subrotokumar.github.io/aboutme-cli" target="_blank" onclick="toggleMenu()">Playground</a>
         </li>
+        <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button></li>
       </ul>
     </div>
   </nav>
   <nav id="hamburger-nav">
     <div class="logo">Subroto Kumar</div>
     <div class="hamburger-menu">
+      <button id="theme-toggle-mobile" class="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
       <div class="hamburger-icon" onclick="toggleMenu()">
         <span></span>
         <span></span>
@@ -522,11 +554,52 @@
     <div class="experience-details-container">
       <div class="projects-grid">
 
+        <!-- PlayStack -->
+        <div class="project-card fade-in">
+          <img src="https://github.com/subrotokumar/playstack/raw/main/docs/assets/architecture.svg" alt="PlayStack" class="project-img" />
+          <h3>
+            <span>PlayStack</span>
+            <a class="github-link" href="https://github.com/subrotokumar/playstack" target="_blank">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+          </h3>
+          <p class="project-sub">Adaptive Bitrate Video Streaming Platform</p>
+          <p class="project-desc">End-to-End Adaptive Bitrate Video Streaming Platform with Automated Multi-Quality Transcoding for seamless video delivery across different network conditions.</p>
+          <div class="tech-tags">
+            <span>Go</span>
+            <span>FFmpeg</span>
+            <span>Dash</span>
+            <span>S3</span>
+            <span>Cloudfront</span>
+            <span>K8s</span>
+            <span>KEDA</span>
+            <span>SQS</span>
+            <span>Terraform</span>
+            <span>Gitlab CI</span>
+            <span>Argocd</span>
+
+
+          </div>
+        </div>
+
+
         <!-- Kurumi -->
         <div class="project-card fade-in">
           <img src="https://github.com/subrotokumar/portfolio/blob/main/img/projects/kurumi.png?raw=true" alt="Kurumi"
             class="project-img" />
-          <h3>Kurumi</h3>
+          <h3>
+            <span>Kurumi</span>
+            <a class="external-link" href="https://play.google.com/store/apps/details?id=com.subrotokumar.kurumi" target="_blank" title="Play Store">
+              <!-- <svg viewBox="0 0 24 24">
+                <path d="M1.6 0L15 13.4l-3 3L1.6 6V0zM0 1.6v14.8L10.4 6 0 1.6zM14.4 15l3-3 5.6 5.6v5.8L14.4 15zM23 22.4L12.6 12 23 7.6v14.8z"/>
+              </svg> -->
+              <svg viewBox="0 0 24 24">
+                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+              </svg>
+            </a>
+          </h3>
           <p class="project-sub">Unofficial AniList Client</p>
           <p class="project-desc">A sleek AniList client powered by GraphQL. Effortlessly discover and track anime and
             manga with a clean UI. Includes personalized lists, detailed media info, and smooth experience.
@@ -539,17 +612,19 @@
             <span>Ferry Client</span>
             <span>Riverpod</span>
           </div>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://play.google.com/store/apps/details?id=com.subrotokumar.kurumi'">Play
-              Store</button>
-          </div>
         </div>
 
         <!-- Rover -->
         <div class="project-card fade-in">
           <img src="./assets/project/rover-server.png" alt="Rover" class="project-img" />
-          <h3>Rover</h3>
+          <h3>
+            <span>Rover</span>
+            <a class="github-link" href="https://github.com/subrotokumar/rover" target="_blank">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+          </h3>
           <p class="project-sub">In-Memory Data Store</p>
           <p class="project-desc">Redis compatible In-memory store. It aims to provide the simplicity and
             speed of Redis while leveraging Go's powerful concurrency features. It is compatible with the RESP.</p>
@@ -560,18 +635,19 @@
             <span>RESP</span>
              <span>Concurrency</span>
           </div>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/subrotokumar/rover'">GitHub</button>
-          </div>
         </div>
-
-
 
         <!-- Stackctl -->
         <div class="project-card fade-in">
           <img src="./assets/project/stackctl.png" alt="Stackctl CLI" class="project-img">
-          <h3>Stackctl CLI</h3>
+          <h3>
+            <span>Stackctl CLI</span>
+            <a class="github-link" href="https://github.com/subrotokumar/stackctl" target="_blank">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+          </h3>
           <p class="project-sub">Java Project Toolkit Cli</p>
           <p class="project-desc">A powerful TUI-powered developer toolkit that accelerates Java development with
             instant project creation, integrated framework support, and smooth task execution.</p>
@@ -584,16 +660,19 @@
             <span>Bubbletea</span>
             <span>Lipgloss</span>
           </div>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/subrotokumar/stackctl'">GitHub</button>
-          </div>
         </div>
 
         <!-- LBX -->
         <div class="project-card fade-in">
           <img src="./assets/project/lbx.png" alt="LBX" class="project-img" />
-          <h3>LBX</h3>
+          <h3>
+            <span>LBX</span>
+            <a class="github-link" href="https://github.com/subrotokumar/lbx" target="_blank">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+          </h3>
           <p class="project-sub">LoadBalancer in Go that keeps your traffic flowing smoothly!</p>
           <p class="project-desc">
           <p class="project-desc">
@@ -602,10 +681,6 @@
           </p>
           </p>
           <div class="tech-tags"><span>Go</span><span>Docker</span><span>Networking</span></div>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/subrotokumar/lbx'">GitHub</button>
-          </div>
         </div>
 
 
@@ -615,7 +690,14 @@
         <!-- Comet -->
         <div class="project-card fade-in">
           <img src="./assets/project/comet.png" alt="Comet" class="project-img" />
-          <h3>Comet</h3>
+          <h3>
+            <span>Comet</span>
+            <a class="github-link" href="https://github.com/subrotokumar/comet" target="_blank">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+          </h3>
           <p class="project-sub">Crypto & NFT wallet</p>
           <p class="project-desc">A secure cryptocurrency wallet with support for
             wallet encryption, and ERC20 & NFT interaction. Provides a transaction facility,
@@ -624,31 +706,37 @@
           <div class="tech-tags">
             <span>Flutter</span><span>Web3Dart</span><span>ERC20</span><span>ERC721</span>
           </div>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/subrotokumar/comet'">GitHub</button>
-          </div>
         </div>
 
         <!-- Helios -->
         <div class="project-card fade-in">
           <img src="./assets/project/helios.png" alt="Helios" class="project-img" />
-          <h3>Helios</h3>
+          <h3>
+            <span>Helios</span>
+            <a class="github-link" href="https://github.com/subrotokumar/helios" target="_blank">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+          </h3>
           <p class="project-sub">Minimalist Web Framework</p>
             <p class="project-desc">A lightweight Python web framework built from scratch on top of WSGI (Web Server Gateway
             Interface), designed to simplify backend API development with intuitive routing and
             flexible middleware support.</p>
           <div class="tech-tags"><span>Python</span><span>API</span><span>WSGI</span></div>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/subrotokumar/helios'">GitHub</button>
-          </div>
         </div>
 
         <!-- Moriko -->
         <div class="project-card fade-in">
           <img src="./assets/project/moriko.png" alt="Moriko" class="project-img" />
-          <h3>Moriko</h3>
+          <h3>
+            <span>Moriko</span>
+            <a class="github-link" href="https://github.com/subrotokumar/moriko" target="_blank">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+          </h3>
           <p class="project-sub">Your Pocket Manga Reader</p>
           <p class="project-desc">A smooth and intuitive manga reader with support for high-quality images, bookmarking.
             Designed for a distraction-free, immersive reading experience — all in your pocket.</p>
@@ -661,16 +749,19 @@
             <span>Riverpod</span>
             <span>Isar DB</span>
           </div>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/subrotokumar/moriko'">GitHub</button>
-          </div>
         </div>
 
         <!-- Docsync -->
         <div class="project-card fade-in">
           <img src="./assets/project/docsync.png" alt="Docsync" class="project-img" />
-          <h3>Docsync</h3>
+          <h3>
+            <span>Docsync</span>
+            <a class="github-link" href="https://github.com/subrotokumar/doc-sync" target="_blank">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+          </h3>
           <p class="project-sub">Real-time Collaboration Tool</p>
           <p class="project-desc">Google Docs-style web app supporting real-time text editing using Socket.IO.
             Includes collaborative editing, and seamless syncing between users.
@@ -683,16 +774,26 @@
             <span>MongoDB</span>
             <span>Quill</span>
           </div>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/subrotokumar/doc-sync'">GitHub</button>
-          </div>
         </div>
 
         <!-- 1inch Dex Clone -->
         <div class="project-card fade-in">
           <img src="/assets/project/1inchdex.png" alt="1inch DEX" class="project-img" />
-          <h3>1Inch DEX</h3>
+          <h3>
+            <span>1Inch DEX</span>
+            <div class="project-links">
+              <a class="external-link" href="https://fascinating-empanada-ff7997.netlify.app/" target="_blank" title="Deployed App">
+                <svg viewBox="0 0 24 24">
+                  <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                </svg>
+              </a>
+              <a class="github-link" href="https://github.com/subrotokumar/1inch-dex" target="_blank">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </a>
+            </div>
+          </h3>
           <p class="project-sub">1INCH DEX: Token Swap</p>
           <p class="project-desc">A token swap application enabling seamless exchange of 13 crypto tokens with MetaMask
             integration. Built on top of the 1Inch aggregator powered by React.</p>
@@ -703,12 +804,6 @@
             <span>React</span>
             <span>DEX</span>
             <span>Walletconnect</span>
-          </div>
-          <div class="btn-container">
-            <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://fascinating-empanada-ff7997.netlify.app/'">Deployed App</button>
-            <button class="btn btn-color-2 project-btn"
-              onclick="location.href='https://github.com/subrotokumar/1inch-dex'">GitHub</button>
           </div>
         </div>
 
