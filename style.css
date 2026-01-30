@@ -620,6 +620,8 @@ section {
 #experience {
   position: relative;
   padding: 2rem 0;
+  height: auto;
+  min-height: fit-content;
 }
 
 .experience-sub-title {
@@ -736,6 +738,8 @@ article div p {
 
 #projects {
   position: relative;
+  height: auto;
+  min-height: fit-content;
 }
 
 .color-container {
