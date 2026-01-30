@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
 const roles = [
   "Software",
   "🖥️Backend",
-  "☸️Kubernetes",
-  "♾️DevOps"
+  "♾️Kubernetes",
+  "Cloud♾️DevOps"
 ];
 
 const typedText = document.getElementById("typed-text");
