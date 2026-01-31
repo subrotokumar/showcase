@@ -5,12 +5,48 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Subroto Kumar | Portfolio</title>
+  
+  <!-- SEO Meta Tags -->
+  <title>Subroto Kumar | Software Engineer - Backend, DevOps & Cloud Architecture</title>
+  <meta name="description" content="Subroto Kumar - Software Engineer specializing in Backend Development, DevOps, Kubernetes, and Cloud Architecture. 3X Microsoft Azure Certified. Building scalable distributed systems with Go, Java, Python, and Kafka." />
+  <meta name="keywords" content="Software Engineer, Backend Developer, DevOps, Kubernetes, Cloud Architecture, Go, Java, Python, Kafka, Spring Boot, Azure, AWS" />
+  <meta name="author" content="Subroto Kumar" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Subroto Kumar - Software Engineer Portfolio" />
+  <meta property="og:description" content="Backend Engineer specializing in scalable distributed systems, microservices, and cloud infrastructure." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://subrotokumar.github.io/showcase" />
+  <meta property="og:image" content="./assets/meta/meta.png" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Subroto Kumar - Software Engineer" />
+  <meta name="twitter:description" content="Building scalable systems that stay steady - Backend, DevOps & Cloud Architecture" />
+  <meta name="twitter:image" content="./assets/meta/meta.png" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/terminal.png" />
+  <link rel="apple-touch-icon" href="./assets/terminal.png" />
+  
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="mediaqueries.css" />
+  
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="./assets/terminal.png" as="image" />
 </head>
 
 <body>
+  <!-- Loading Overlay -->
+  <div class="loading-overlay">
+    <div class="loader">
+      <div class="loader-circle"></div>
+      <div class="loader-circle"></div>
+      <div class="loader-circle"></div>
+    </div>
+  </div>
   <nav id="desktop-nav">
     <div class="logo nav-links">Subroto Kumar</div>
     <div>
@@ -89,24 +125,27 @@
       <br>
       <br>
       <div class="btn-container">
-        <button class="btn btn-color-2"
-          onclick="window.open('https://drive.google.com/file/d/1iFe5jQU4b9Rwnyq8dHNDSPJoB9Zw8LhI/view?usp=sharing')">
+        <button class="btn btn-color-2" aria-label="Download CV"
+          onclick="window.open('https://gitlab.com/subrotokumar.dev/public/-/raw/main/resume.pdf?ref_type=heads&inline=true')">
           Download CV
         </button>
-        <button class="btn btn-color-1" onclick="location.href='./#contact'">
+        <button class="btn btn-color-1" aria-label="Navigate to contact section" onclick="location.href='./#contact'">
           Contact Info
         </button>
       </div>
       <div id="socials-container">
-        <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
-          onclick="location.href='https://linkedin.com/in/kumarsubroto'" />
-        <img src="./assets/github.png" alt="My Github profile" class="icon"
-          onclick="location.href='https://github.com/subrotokumar'" />
-
-        <img src="./assets/playstore.png" alt="Playstore" class="icon"
-          onclick="location.href='https://play.google.com/store/apps/developer?id=Subroto+Kumar&pli=1'" />
-        <img src="./assets/terminal-white.png" alt="My Cli Portfolio" class="icon cli"
-          onclick="location.href='https://subrotokumar.github.io/aboutme-cli'" />
+        <a href="https://linkedin.com/in/kumarsubroto" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile">
+          <img src="./assets/linkedin.png" alt="LinkedIn" class="icon" />
+        </a>
+        <a href="https://github.com/subrotokumar" target="_blank" rel="noopener noreferrer" aria-label="Visit GitHub profile">
+          <img src="./assets/github.png" alt="GitHub" class="icon" />
+        </a>
+        <a href="https://play.google.com/store/apps/developer?id=Subroto+Kumar&pli=1" target="_blank" rel="noopener noreferrer" aria-label="View apps on Google Play Store">
+          <img src="./assets/playstore.png" alt="Google Play Store" class="icon" />
+        </a>
+        <a href="https://subrotokumar.github.io/aboutme-cli" target="_blank" rel="noopener noreferrer" aria-label="Visit CLI Portfolio">
+          <img src="./assets/terminal-white.png" alt="CLI Portfolio" class="icon cli" />
+        </a>
       </div>
     </div>
   </section>
@@ -296,93 +335,6 @@
       </div>
     </div>
   </section>
-  <!-- <section id="experience">
-    <p class="section__text__p1">Explore My</p>
-    <h1 class="title">Experience</h1>
-    <div class="experience-details-container">
-      <div class="experience-details-container">
-        <div class="experience-grid">
-
-          <div class="experience-item">
-            <div class="experience-content">
-              <div class="work-heading">
-                <div>
-                  <h3>Software Engineer</h3>
-                  <p class="company">Capgemini</p>
-                  <p class="date">March, 2024 - Present</p>
-                </div>
-                <img src="./assets/work/capgemini.png" class="work-logo">
-              </div>
-
-              <ul>
-                <li>Worked on <strong>RAG</strong> application development using <strong>pgvector</strong> and
-                  <strong>LangChain</strong>: Integrated
-                  advanced AI and
-                  database functionalities to enhance recommendation and data retrieval systems.
-                </li>
-                <li>Developed a <strong>PaaS</strong> tool using <strong>Spring Boot</strong> and
-                  <strong>Node.JS</strong> in a
-                  <strong>microservices</strong> architecture.
-                  Integrated <strong>AWS</strong>
-                  services (S3, ECS) for scalable deployment.
-                </li>
-                <li>Supported front-end applications by building a custom UI in <strong>Angular</strong>.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="experience-item">
-            <div class="experience-content">
-              <div class="work-heading">
-                <div>
-                  <h3>Cloud Engineer Intern</h3>
-                  <p class="company">LTI Mindtree</p>
-                  <p class="date">Aug, 2023 - Oct, 2023</p>
-                </div>
-                <img src="./assets/work/ltimindtree.png" class="work-logo">
-              </div>
-
-              <ul>
-                <li>Gained expertise in <strong>Java, AWS</strong> (S3, RDS, EC2, IAM), <strong>Terraform, DBMS, and
-                    Linux</strong>:
-                  Developed strong
-                  technical skills across cloud infrastructure and software development.</li>
-                <li>Completed Ignite Training on the Cloud technology track with a score of <strong>86%</strong>:
-                  Demonstrated
-                  proficiency in cloud technologies through an industry-recognized program.</li>
-                <li>Worked with AWS services for cloud management and infrastructure</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="experience-item">
-            <div class="experience-content">
-              <div class="work-heading">
-                <div>
-                  <h3>Flutter Developer Intern</h3>
-                  <p class="company">Ridobiko Bike Rentals</p>
-                  <p class="date">Nov 2022 - Apr 2023</p>
-                </div>
-                <img src="./assets/work/ridobiko.webp" class="work-logo">
-              </div>
-
-              <ul>
-                <li>Integrated DigiLocker for <strong>e-KYC</strong> using <strong>Flutter</strong> and OAuth2.0:
-                  Enabled secure document
-                  verification
-                  for users through DigiLocker integration, ensuring compliance with KYC regulations.</li>
-                <li>Implemented personalized coupon features, GST logic, and an in-app payment gateway</li>
-                <li>Refactored the codebase, improving app performance by <strong>20%</strong> and reducing app size by
-                  <strong>15%</strong>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
-    </div>
-  </section> -->
-  <!-- ------------------- -->
   <section id="experience">
     <p class="section__text__p1">Explore My</p>
     <h1 class="title">Technical Skills</h1>
@@ -903,6 +855,13 @@
     </nav>
     <p>Copyright &#169; 2023-2026 Subroto Kumar. All Rights Reserved.</p>
   </footer>
+  <!-- Scroll to Top Button -->
+  <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+  
   <script src="script.js"></script>
 </body>
 
