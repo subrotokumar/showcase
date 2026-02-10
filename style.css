@@ -1005,11 +1005,6 @@ article div p {
   background: rgb(250, 250, 250);
 }
 
-.project-img {
-  border-radius: 1rem;
-  width: 100%;
-  height: 90%;
-}
 
 .project-title {
   margin: 1rem;
@@ -1465,7 +1460,8 @@ body.dark-mode .cursor {
 
 .project-img {
   width: 100%;
-  height: 280px;
+  /* height: 280px; */
+  aspect-ratio: 4/3;
   object-fit: cover;
   border-radius: 14px;
   margin-bottom: 1.2rem;
