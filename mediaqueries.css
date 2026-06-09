@@ -87,9 +87,10 @@
     text-align: center;
   }
   .section__pic-container {
-    width: auto;
+    width: 46vw;
     height: 46vw;
     justify-content: center;
+    margin: 0 auto 2rem;
   }
   .section__text__p2 {
     font-size: 1.25rem;

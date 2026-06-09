@@ -50,6 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Initialize scroll to top button
   initScrollToTop();
+  
+  // Initialize 3D tilt effect on project cards
+  initTiltEffect();
 });
 
 // Typing Animation
@@ -92,9 +95,22 @@ function initScrollAnimations() {
   };
 
   const observer = new IntersectionObserver((entries) => {
+    let delay = 0;
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        if (entry.target.classList.contains('project-card') || entry.target.tagName === 'ARTICLE') {
+          entry.target.style.transitionDelay = `${delay}s`;
+          delay += 0.1;
+          
+          // Reset the transition delay after the animation is done
+          // so that hover effects are not delayed
+          setTimeout(() => {
+            entry.target.style.transitionDelay = '0s';
+          }, (delay * 1000) + 800);
+        }
+        
         entry.target.classList.add('animate-in');
+        observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
@@ -148,3 +164,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// 3D Tilt Effect for Project Cards
+function initTiltEffect() {
+  const projectCards = document.querySelectorAll('.project-card');
+  
+  projectCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      // Disable tilt on mobile devices or smaller screens
+      if (window.innerWidth <= 768) return;
+      
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      // Calculate rotation (max 8 degrees)
+      const rotateX = ((y - centerY) / centerY) * -8;
+      const rotateY = ((x - centerX) / centerX) * 8;
+      
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      // Reset transform when mouse leaves to allow CSS hover/transitions to take over
+      card.style.transform = '';
+    });
+  });
+}
