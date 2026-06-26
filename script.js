@@ -22,7 +22,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize 3D tilt effect on project cards
   initTiltEffect();
+
+  // Truncate long job tasks lists
+  initJobTasksCollapsible();
 });
+
+// Job Tasks Collapsible Logic
+function initJobTasksCollapsible() {
+  const jobTaskLists = document.querySelectorAll('.job-tasks');
+  jobTaskLists.forEach(ul => {
+    if (ul.children.length > 6) {
+      ul.classList.add('collapsible');
+      const btn = document.createElement('button');
+      btn.className = 'expand-btn';
+      btn.textContent = 'Show ' + (ul.children.length - 6) + ' more';
+      btn.onclick = () => {
+        const isExpanded = ul.classList.toggle('expanded');
+        btn.textContent = isExpanded ? 'Show less' : 'Show ' + (ul.children.length - 6) + ' more';
+      };
+      ul.parentNode.insertBefore(btn, ul.nextSibling);
+    }
+  });
+}
 
 // Typing Animation
 const roles = [

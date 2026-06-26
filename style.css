@@ -538,6 +538,31 @@ a:hover {
   font-weight: 600;
 }
 
+.job-tasks.collapsible li:nth-child(n+7) {
+  display: none;
+}
+.job-tasks.collapsible.expanded li:nth-child(n+7) {
+  display: list-item;
+}
+
+.expand-btn {
+  display: inline-flex;
+  margin-top: 10px;
+  margin-left: 20px;
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.expand-btn:hover {
+  color: var(--text-main);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 /* Skills Section */
 .skills-grid {
   display: grid;
