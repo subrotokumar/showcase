@@ -342,14 +342,15 @@ if (canvas) {
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+      const isLight = document.documentElement.classList.contains('light');
+      ctx.fillStyle = isLight ? 'rgba(0, 0, 0, 0.2)' : 'rgba(255, 255, 255, 0.4)';
       ctx.fill();
     }
   }
 
   function initParticles() {
     particles = [];
-    const count = Math.min((width * height) / 15000, 100); // density
+    const count = Math.min((width * height) / 12000, 120); // balanced density
     for (let i = 0; i < count; i++) {
       particles.push(new Particle());
     }
@@ -370,8 +371,10 @@ if (canvas) {
 
         if (distance < 120) {
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(255, 255, 255, ${(1 - distance / 120) * 0.3})`;
-          ctx.lineWidth = 0.5;
+          const isLight = document.documentElement.classList.contains('light');
+          const alpha = (1 - distance / 120) * (isLight ? 0.2 : 0.4);
+          ctx.strokeStyle = isLight ? `rgba(0, 0, 0, ${alpha})` : `rgba(255, 255, 255, ${alpha})`;
+          ctx.lineWidth = 0.75;
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
           ctx.stroke();
@@ -417,8 +420,10 @@ if (radarCanvas) {
 
     radarCtx.clearRect(0, 0, size, size);
 
+    const isLight = document.documentElement.classList.contains('light');
+
     // Draw grid rings
-    radarCtx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+    radarCtx.strokeStyle = isLight ? 'rgba(0, 0, 0, 0.1)' : 'rgba(255, 255, 255, 0.1)';
     radarCtx.lineWidth = 1;
     for (let i = 1; i <= 5; i++) {
       radarCtx.beginPath();
@@ -450,7 +455,7 @@ if (radarCanvas) {
       radarCtx.stroke();
 
       // Labels
-      radarCtx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+      radarCtx.fillStyle = isLight ? 'rgba(0, 0, 0, 0.6)' : 'rgba(255, 255, 255, 0.6)';
       const labelX = center + Math.cos(angle) * (radius + 25);
       const labelY = center + Math.sin(angle) * (radius + 25);
       radarCtx.fillText(axes[j], labelX, labelY);
@@ -475,7 +480,7 @@ if (radarCanvas) {
     radarCtx.stroke();
 
     // Draw Data Points
-    radarCtx.fillStyle = '#f4f4f5';
+    radarCtx.fillStyle = isLight ? '#0f172a' : '#f4f4f5';
     for (let j = 0; j < axes.length; j++) {
       const angle = (Math.PI * 2 * j) / axes.length - Math.PI / 2;
       const scoreRatio = currentScores[j] / 100;
@@ -519,6 +524,7 @@ if (radarCanvas) {
   }
 
   window.addEventListener('resize', resizeRadar);
+  window.addEventListener('themeChanged', drawRadar);
   setTimeout(resizeRadar, 100);
 
   // Bind hover events
@@ -586,4 +592,45 @@ interactiveElements.forEach(el => {
   el.addEventListener('mouseleave', () => {
     if (cursorOutline) cursorOutline.classList.remove('hover-state');
   });
+});
+
+// 7. Theme Toggle Logic
+function toggleTheme() {
+  const htmlEl = document.documentElement;
+  const isLight = htmlEl.classList.toggle('light');
+  htmlEl.classList.toggle('dark', !isLight);
+  
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  updateThemeIcon(isLight);
+  window.dispatchEvent(new Event('themeChanged'));
+}
+
+function updateThemeIcon(isLight) {
+  const svgPaths = {
+    moon: '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>',
+    sun: '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>'
+  };
+  
+  const iconDesktop = document.getElementById('theme-icon-desktop');
+  const iconMobile = document.getElementById('theme-icon-mobile');
+  
+  const targetPath = isLight ? svgPaths.moon : svgPaths.sun;
+  
+  if (iconDesktop) iconDesktop.innerHTML = targetPath;
+  if (iconMobile) iconMobile.innerHTML = targetPath;
+}
+
+// Initialize theme early
+const savedTheme = localStorage.getItem('theme');
+const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+const isLight = savedTheme === 'light' || (!savedTheme && prefersLight);
+
+if (isLight) {
+  document.documentElement.classList.add('light');
+  document.documentElement.classList.remove('dark');
+}
+
+// Ensure icons match on load
+document.addEventListener('DOMContentLoaded', () => {
+  updateThemeIcon(document.documentElement.classList.contains('light'));
 });
