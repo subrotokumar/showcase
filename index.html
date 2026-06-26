@@ -1,938 +1,580 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO Meta Tags -->
   <title>Subroto Kumar | Software Engineer - Backend, DevOps & Cloud Architecture</title>
-  <meta name="description"
-    content="Subroto Kumar - Software Engineer specializing in Backend Development, DevOps, Kubernetes, and Cloud Architecture. 3X Microsoft Azure Certified. Building scalable distributed systems with Go, Java, Python, and Kafka." />
-  <meta name="keywords"
-    content="Software Engineer, Backend Developer, DevOps, Kubernetes, Cloud Architecture, Go, Java, Python, Kafka, Spring Boot, Azure, AWS" />
-  <meta name="author" content="Subroto Kumar" />
-  <meta name="robots" content="index, follow" />
-
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Subroto Kumar - Software Engineer Portfolio" />
-  <meta property="og:description"
-    content="Backend Engineer specializing in scalable distributed systems, microservices, and cloud infrastructure." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://subrotokumar.github.io/showcase" />
-  <meta property="og:image" content="./assets/meta/meta.png" />
-
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Subroto Kumar - Software Engineer" />
-  <meta name="twitter:description"
-    content="Building scalable systems that stay steady - Backend, DevOps & Cloud Architecture" />
-  <meta name="twitter:image" content="./assets/meta/meta.png" />
-
-  <!-- Favicon -->
+  <meta name="description" content="Subroto Kumar - Software Engineer specializing in Backend Development, DevOps, Kubernetes, and Cloud Architecture." />
+  
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/terminal.png" />
   <link rel="apple-touch-icon" href="./assets/terminal.png" />
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="mediaqueries.css" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Preload Critical Assets -->
-  <link rel="preload" href="./assets/terminal.png" as="image" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- Loading Overlay -->
-  <div class="loading-overlay">
-    <div class="loader">
-      <div class="loader-circle"></div>
-      <div class="loader-circle"></div>
-      <div class="loader-circle"></div>
-    </div>
-  </div>
-  <nav id="desktop-nav">
-    <div class="logo nav-links">
-      &lt;Subroto /&gt;
-    </div>
-    <div>
+  <canvas id="bg-canvas"></canvas>
+  <div class="background-grid"></div>
+  
+  <nav class="navbar">
+    <div class="nav-content">
+      <div class="logo">&lt;Subroto/&gt;</div>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="https://subrotokumar.github.io/aboutme-cli" target="_blank" onclick="toggleMenu()">Playground</a>
-        </li>
-        <!-- <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-            <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2">
-              <circle cx="12" cy="12" r="5"></circle>
-              <line x1="12" y1="1" x2="12" y2="3"></line>
-              <line x1="12" y1="21" x2="12" y2="23"></line>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-              <line x1="1" y1="12" x2="3" y2="12"></line>
-              <line x1="21" y1="12" x2="23" y2="12"></line>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-            <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-          </button></li> -->
+        <li><a href="#about"><span class="nav-num">01.</span> About</a></li>
+        <li><a href="#experience"><span class="nav-num">02.</span> Experience</a></li>
+        <li><a href="#skills"><span class="nav-num">03.</span> Skills</a></li>
+        <li><a href="#projects"><span class="nav-num">04.</span> Projects</a></li>
+        <li><a href="https://subrotokumar.github.io/aboutme-cli" target="_blank" class="nav-special">Playground ↗</a></li>
       </ul>
-    </div>
-  </nav>
-  <nav id="hamburger-nav">
-    <div class="logo">Subroto Kumar</div>
-    <div class="hamburger-menu">
-      <button id="theme-toggle-mobile" class="theme-toggle" aria-label="Toggle dark mode">
-        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2">
-          <circle cx="12" cy="12" r="5"></circle>
-          <line x1="12" y1="1" x2="12" y2="3"></line>
-          <line x1="12" y1="21" x2="12" y2="23"></line>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-          <line x1="1" y1="12" x2="3" y2="12"></line>
-          <line x1="21" y1="12" x2="23" y2="12"></line>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
-        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-      </button>
       <div class="hamburger-icon" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="menu-links">
-        <li><a href="#about" onclick="toggleMenu()">About</a></li>
-        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        <li><a href="https://subrotokumar.github.io/aboutme-cli" onclick="toggleMenu()">Playground</a></li>
+        <span></span><span></span><span></span>
       </div>
     </div>
   </nav>
-  <section id="profile">
-    <div class="section__pic-container">
-      <img src="./assets/profile-pic.png" class="circular" alt="Subroto Kumar profile picture" />
-    </div>
-    <div class="section__text">
-      <p class="section__text__p1">Hello, I'm</p>
-      <h1 class="title">Subroto Kumar</h1>
-      <span class="typing-text section__text__p2"><span id="typed-text"></span><span class="cursor"></span></span>
-      <span class="section__text__p2">Engineer</span>
-      <br>
-      <br>
-      <div class="btn-container">
-        <button class="btn btn-color-2" aria-label="Download CV"
-          onclick="window.open('https://resume.subrotokumar.dev')">
-          Download CV
-        </button>
-        <button class="btn btn-color-1" aria-label="Navigate to contact section" onclick="location.href='#contact'">
-          Contact Info
-        </button>
-      </div>
-      <div id="socials-container">
-        <a href="https://linkedin.com/in/isubrotokumar" target="_blank" rel="noopener noreferrer"
-          aria-label="Visit LinkedIn profile">
-          <img src="./assets/linkedin.png" alt="LinkedIn" class="icon" />
-        </a>
-        <a href="https://github.com/subrotokumar" target="_blank" rel="noopener noreferrer"
-          aria-label="Visit GitHub profile">
-          <img src="./assets/github.png" alt="GitHub" class="icon" />
-        </a>
-        <a href="https://play.google.com/store/apps/developer?id=Subroto+Kumar&pli=1" target="_blank"
-          rel="noopener noreferrer" aria-label="View apps on Google Play Store">
-          <img src="./assets/playstore.png" alt="Google Play Store" class="icon" />
-        </a>
-        <a href="https://subrotokumar.github.io/aboutme-cli" target="_blank" rel="noopener noreferrer"
-          aria-label="Visit CLI Portfolio">
-          <img src="./assets/terminal-white.png" alt="CLI Portfolio" class="icon cli" />
-        </a>
-      </div>
-    </div>
-  </section>
-  <section id="about">
-    <p class="section__text__p1">Get To Know More</p>
-    <h1 class="title">About Me</h1>
-    <br><br>
-    <div class="section-container">
-      <div class="about-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <img src="./assets/azure.png" alt="Azure icon" class="icon" />
-            <h3>Certification</h3>
-            <p><strong>3X.</strong> <em>Microsoft Azure Certified</em></p>
-            <!-- <p>Azure Developer Associate <strong>AZ-204</strong></p>
-            <p>Azure AI Engineer Associate <strong>AI-102</strong>
-            <p>Azure
-              foundational <strong>AZ-900</strong></p> -->
-            <p><strong>AZ-204</strong> | <strong>AI-102</strong> | <strong>AZ-900</strong></p>
-            <img src="./assets/badge/az-204.png" alt="Azure Developer Associate" class="cert-badge">
-            <img src="./assets/badge/ai-102.png" alt="Azure AI Engineer Associate" class="cert-badge">
-            <img src="./assets/badge/az-900.png" alt="Azure foundational" class="cert-badge">
-          </div>
-          <div class="details-container">
-            <img src="./assets/experience.png" alt="Experience icon" class="icon" />
-            <h3>Experience</h3>
-            <p>Seamlessly integrating technology <br>and user experience with over 2+ years of practical expertise.</p>
-            <p><strong>Capgemini | LTI Mindtree | Ridobiko</strong></p>
-          </div>
-          <div class="details-container">
-            <img src="./assets/education.png" alt="Education icon" class="icon" />
-            <h3>Education</h3>
-            <p><strong>B.Tech.</strong> in <em>Electronics and Communication</em></p>
-            <p>Haldia Institute of Technology</p>
-            <p>Score: <strong>8.98 / 10 CGPA | 2023 Passout</strong></p>
-          </div>
 
-        </div>
-        <br>
-        <div class="text-container">
-          <p>
-            I build systems that stay steady — the kind that don’t panic when traffic surges or when no one’s around to
-            babysit them.
-            <br>
-            Most of what I build runs quietly in the background: distributed services, event-driven pipelines, and cloud
-            infrastructure that keep things running without fuss. I like making complex systems feel simple —
-            predictable under load, graceful under failure, and boring in the best possible way.
-            <br><br>
-            My work spans <strong>Backend</strong>, <strong>DevOps</strong>, and <strong>AI-systems</strong> — designing
-            scalable microservices, automating deployments,
-            and wiring up LLM and RAG components that actually earn their keep. My toolkit includes <strong>Go</strong>,
-            <strong>Java</strong>, and
-            <strong>Python</strong>, alongside <strong>Spring Boot</strong>, <strong>Kafka</strong>,
-            <strong>Kubernetes</strong>, <strong>Postgres</strong>, and <strong>AWS/Azure</strong>.
-            <br><br>
-            I’m not here to chase hype or reinvent what already works. I’m here to build foundations — code that holds
-            up under pressure, infrastructure that explains itself, and systems that make future engineers nod and say,
-            “Yeah, this was built right.” 🚀
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="#about" onclick="toggleMenu()">01. About</a></li>
+      <li><a href="#experience" onclick="toggleMenu()">02. Experience</a></li>
+      <li><a href="#skills" onclick="toggleMenu()">03. Skills</a></li>
+      <li><a href="#projects" onclick="toggleMenu()">04. Projects</a></li>
+      <li><a href="https://subrotokumar.github.io/aboutme-cli" onclick="toggleMenu()" class="nav-special">Playground ↗</a></li>
+    </ul>
+  </div>
 
+  <main>
+    <section id="hero" class="hero-section fade-in">
+      <div class="hero-layout">
+        <div class="hero-content">
+          <div class="terminal-badge">
+             <span class="pulse-dot"></span> System Online
+          </div>
+          <h1 class="hero-title">Subroto Kumar</h1>
+          <div class="terminal-text">
+            <span class="prompt">~/$</span> <span id="typed-text"></span><span class="cursor">_</span>
+          </div>
+          <p class="hero-subtitle">
+            Building systems that stay steady — the kind that don’t panic when traffic surges or when no one’s around to babysit them. Focus on distributed services, event-driven pipelines, and cloud infrastructure.
           </p>
-        </div>
-      </div>
-    </div>
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
-  </section>
-  <br><br>
-  <section id="experience">
-    <p class="section__text__p1">Explore My</p>
-    <h1 class="title">Experience</h1>
-    <br>
-    <div class="timeline-container">
-      <!-- Capgemini -->
-      <div class="timeline-item left">
-        <div class="timeline-content">
-          <div class="work-heading">
-            <div>
-              <h3>Software Engineer</h3>
-              <p class="company">Capgemini</p>
-              <p class="date">March, 2024 - Present</p>
-            </div>
-            <img src="./assets/work/capgemini.png" class="work-logo" alt="capgemini">
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="window.open('https://resume.subrotokumar.dev')">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              Deploy CV
+            </button>
+            <a href="#contact" class="btn btn-secondary">Init Contact</a>
           </div>
-          <ul>
-            <li>
-              Built an end-to-end <strong>Ticket Dispatcher system</strong> using <strong>Spring Boot–Kafka</strong>
-              microservices, automating ticket assignment for 3000+ agents, reducing manual workload by 60% and
-              improving efficiency by 40%.
-            </li>
-            <li>
-              Orchestrated <strong>Kubernetes</strong> deployments with <strong>Helm</strong>, <strong>ArgoCD</strong>,
-              and <strong>GitLab CI/CD</strong> pipelines for automated builds, security scans, and enterprise-grade
-              releases.
-            </li>
-            <li>
-              Developed an <strong>Agentic AI Business Analyst</strong> with <strong>LangChain</strong> and
-              <strong>LangGraph</strong>, generating actionable insights 3× faster than manual processes.
-            </li>
-            <li>
-              Built a high-performance <strong>RAG backend</strong> with <strong>PGVector</strong>, improving search
-              latency by 40% and scaling to 10k+ daily users with optimized indexing and sharding strategies.
-            </li>
-            <li>
-              Implemented an <strong>LLM generation microservice</strong> using <strong>FastAPI</strong>, integrating
-              <strong>Azure OpenAI</strong>, <strong>Amazon Bedrock</strong>, and <strong>Ollama</strong> for multi-LLM
-              support.
-            </li>
-            <li>
-              Developed a scalable <strong>PaaS solution</strong> for deploying web applications using <strong>Spring
-                Boot</strong> and <strong>Node.js</strong> microservices.
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- LTI Mindtree -->
-      <div class="timeline-item right">
-        <div class="timeline-content">
-          <div class="work-heading">
-            <div>
-              <h3>Cloud Engineer Intern</h3>
-              <p class="company">LTI Mindtree</p>
-              <p class="date">Aug, 2023 - Oct, 2023</p>
-            </div>
-            <img src="./assets/work/ltimindtree.png" class="work-logo" alt="lti-mindtree">
-          </div>
-          <ul>
-            <li>
-              Gained hands-on exposure to <strong>AWS</strong> compute, storage, networking, and CDN services including
-              <strong>EC2</strong>, <strong>ECS</strong>, <strong>EKS</strong>, <strong>S3</strong>,
-              <strong>RDS</strong>, <strong>IAM</strong>, and <strong>CloudFront</strong>.
-            </li>
-            <li>
-              Used <strong>Terraform</strong> to declaratively provision and manage cloud resources, learning IaC
-              workflows and environment consistency.
-            </li>
-            <li>
-              Explored container orchestration concepts and deployment patterns using <strong>ECS</strong> and
-              <strong>Kubernetes (EKS)</strong>.
-            </li>
-            <li>
-              Built backend logic in <strong>Java</strong>, integrating with cloud-managed relational databases.
-            </li>
-            <li>
-              Operated in <strong>Linux</strong>-based systems, developing familiarity with runtime behavior and
-              troubleshooting.
-            </li>
-            <li>
-              Achieved an <strong>86% score</strong> in Spark training, validating applied cloud and infrastructure
-              knowledge.
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Ridobiko -->
-      <div class="timeline-item left">
-        <div class="timeline-content">
-          <div class="work-heading">
-            <div>
-              <h3>Flutter Developer Intern</h3>
-              <p class="company">Ridobiko Bike Rentals</p>
-              <p class="date">Nov 2022 - Apr 2023</p>
-            </div>
-            <img src="./assets/work/ridobiko.webp" class="work-logo" alt="ridobiko">
-          </div>
-          <ul>
-            <li>
-              Integrated <strong>DigiLocker e-KYC</strong> using <strong>Flutter</strong>, <strong>OAuth 2.0</strong>,
-              and secure <strong>RESTful APIs</strong> for compliant identity verification.
-            </li>
-            <li>
-              Architected business-critical modules including <strong>coupon engines</strong>, <strong>GST
-                computation</strong>, and <strong>in-app wallet payment system</strong>.
-            </li>
-            <li>
-              Refactored legacy code, optimizing rendering and state management, achieving 40% performance improvement
-              and 15% reduction in app size.
-            </li>
-            <li>
-              Delivered a scalable cross-platform app (<strong>iOS & Android</strong>) with modular architecture for
-              long-term maintainability.
-            </li>
-          </ul>
-          </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="experience">
-    <p class="section__text__p1">Explore My</p>
-    <h1 class="title">Technical Skills</h1>
-    <div class="experience-details-container">
-      <div class="about-containers">
-        <div class="details-container">
-          <div class="article-container">
-            <article>
-              <img src="https://skillicons.dev/icons?i=go&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Go</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=python&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Python</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=java&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Java</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=spring&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Spring</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=aws&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>AWS</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=azure&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Azure</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=gitlab&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>GitLab</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=docker&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Docker</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=kubernetes&theme=light" alt="Basic icon" class="icon" />
-              <div>
-                <h3>Kubernates</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=terraform&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Terraform</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=kafka&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Kafka</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=rabbitmq&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Rebbitmq</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=postgres&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>PostgreSQL</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=redis&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Redis</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=linux&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Linux</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <!-- New -->
-            <article>
-              <img src="https://skillicons.dev/icons?i=flutter&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Flutter</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=dart&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Dart</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=typescript&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>TypeScript</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=javascript&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>JavaScript</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=nodejs&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Node JS</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=mongodb&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Mongo</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skills.syvixor.com/api/icons?perline=15&i=grpc" alt="Experience icon" class="icon" />
-              <div>
-                <h3>gRPC</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=graphql&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>GraphQL</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=git&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Git</h3>
-                <p>Experienced</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skillicons.dev/icons?i=nestjs&theme=light" alt="Experience icon" class="icon" />
-              <div>
-                <h3>NestJs</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://raw.githubusercontent.com/syvixor/skills-icons/refs/heads/main/icons/argocd.svg"
-                alt="Experience icon" class="icon" />
-              <div>
-                <h3>ArgoCD</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skills.syvixor.com/api/icons?perline=15&i=langchain&theme=light" alt="Experience icon"
-                class="icon" />
-              <div>
-                <h3>Langchain</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skills.syvixor.com/api/icons?perline=15&i=googleadk&theme=light" alt="Experience icon"
-                class="icon" />
-              <div>
-                <h3>ADK</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skills.syvixor.com/api/icons?perline=15&i=opentelemetry&theme=light"
-                alt="Experience icon" class="icon" />
-              <div>
-                <h3>OTel</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skills.syvixor.com/api/icons?perline=15&i=grafana" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Grafana</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skills.syvixor.com/api/icons?perline=15&i=prometheus" alt="Experience icon"
-                class="icon" />
-              <div>
-                <h3>Prometheus</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skills.syvixor.com/api/icons?perline=15&i=loki" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Loki</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-            <article>
-              <img src="https://skills.syvixor.com/api/icons?perline=15&i=tempo" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Tempo</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </div>
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
-  </section>
-  <section id="projects">
-    <p class="section__text__p1">Browse My Recent</p>
-    <h1 class="title">Projects</h1>
-    <div class="experience-details-container">
-      <div class="projects-grid">
-
-        <!-- PlayStack -->
-        <div class="project-card fade-in">
-          <img src="https://github.com/subrotokumar/playstack/raw/main/docs/assets/architecture.svg" alt="PlayStack"
-            class="project-img" />
-          <h3>
-            <span>PlayStack</span>
-            <a class="github-link" href="https://github.com/subrotokumar/playstack" target="_blank">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-              </svg>
+          <div class="social-links">
+            <a href="https://github.com/subrotokumar" target="_blank" title="GitHub">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
             </a>
-          </h3>
-          <p class="project-sub">Adaptive Bitrate Video Streaming Platform</p>
-          <p class="project-desc">End-to-End Adaptive Bitrate Video Streaming Platform with Automated Multi-Quality
-            Transcoding for seamless video delivery across different network conditions.</p>
-          <div class="tech-tags">
-            <span>Go</span>
-            <span>FFmpeg</span>
-            <span>Dash</span>
-            <span>S3</span>
-            <span>Cloudfront</span>
-            <span>K8s</span>
-            <span>KEDA</span>
-            <span>SQS</span>
-            <span>Terraform</span>
-            <span>Gitlab CI</span>
-            <span>Argocd</span>
-
-
+            <a href="https://linkedin.com/in/isubrotokumar" target="_blank" title="LinkedIn">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://play.google.com/store/apps/developer?id=Subroto+Kumar&pli=1" target="_blank" title="Play Store">
+               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14l-4.5 4.5V11l4.5 3zM3.4 3L11 10.6V20c0 .4-.4.5-.6.2L3 13.8V3.4C3 3.1 3.2 3 3.4 3zM20 10.3c.6.4.6 1 0 1.4L18.5 13l-5-5 5-5 1.5 1.3zM12.5 1l4.5 4.5-4.5 4.5V1z"/></svg>
+            </a>
           </div>
         </div>
+        <div class="hero-image-container">
+          <div class="tech-avatar-wrapper">
+            <div class="tech-ring outer-ring"></div>
+            <div class="tech-ring inner-ring"></div>
+            <img src="./assets/profile-pic.png" alt="Subroto Kumar" class="profile-pic" />
+            <div class="avatar-overlay"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-
-        <!-- Kurumi -->
-        <div class="project-card fade-in">
-          <img src="./assets/project/kurumi.png" alt="Kurumi" class="project-img" />
-          <h3>
-            <span>Kurumi</span>
-            <div class="project-links">
-              <a class="external-link" href="https://play.google.com/store/apps/details?id=com.subrotokumar.kurumi"
-                target="_blank" title="Google Playstore">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
-                </svg>
-              </a>
-              <a class="github-link" href="https://github.com/subrotokumar/kurumi" target="_blank">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg>
-              </a>
-            </div>
-          </h3>
-          <p class="project-sub">Unofficial AniList Client</p>
-          <p class="project-desc">A sleek AniList client powered by GraphQL. Effortlessly discover and track anime and
-            manga with a clean UI. Includes personalized lists, detailed media info, and smooth experience.
+    <section id="about" class="section fade-in">
+      <div class="section-header">
+        <h2><span class="text-accent">01.</span> <span class="glitch-text" data-value="Architecture & Identity">Architecture & Identity</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            My work spans <strong>Backend</strong>, <strong>DevOps</strong>, and <strong>AI-systems</strong> — designing scalable microservices, automating deployments, and wiring up LLM and RAG components that actually earn their keep. 
           </p>
-          <!-- <p class="project-role"><strong>Role:</strong> Full Stack Developer</p> -->
-          <div class="tech-tags">
-            <span>Flutter</span>
-            <span>Dart</span>
-            <span>GraphQL</span>
-            <span>Riverpod</span>
-            <span>Ferry Client</span>
-            <span>Riverpod</span>
+          <p>
+            I’m not here to chase hype or reinvent what already works. I’m here to build foundations — code that holds up under pressure, infrastructure that explains itself, and systems that make future engineers nod and say, “Yeah, this was built right.” 🚀
+          </p>
+        </div>
+        <div class="certifications-box terminal-window">
+          <div class="terminal-header">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="terminal-title">bash - certifications</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="prompt">$</span> get-certs --vendor="Microsoft Azure"</p>
+            <div class="cert-output">
+              <span class="text-green">✔</span> AZ-204: Developer Associate<br>
+              <span class="text-green">✔</span> AI-102: AI Engineer Associate<br>
+              <span class="text-green">✔</span> AZ-900: Azure Fundamentals
+            </div>
+            <div class="cert-badges mt-4">
+              <img src="./assets/badge/az-204.png" alt="AZ-204" class="cert-img">
+              <img src="./assets/badge/ai-102.png" alt="AI-102" class="cert-img">
+              <img src="./assets/badge/az-900.png" alt="AZ-900" class="cert-img">
+            </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Rover -->
-        <div class="project-card fade-in">
-          <img src="./assets/project/rover-server.png" alt="Rover" class="project-img" />
-          <h3>
-            <span>Rover</span>
-            <div class="project-links">
-              <a class="external-link" href="https://hub.docker.com/r/subrotokumar/rover" target="_blank"
-                title="Docker">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
-                </svg>
-              </a>
-              <a class="github-link" href="https://github.com/subrotokumar/rover" target="_blank">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg>
-              </a>
+    <section id="experience" class="section fade-in">
+      <div class="section-header">
+        <h2><span class="text-accent">02.</span> <span class="glitch-text" data-value="Execution Log">Execution Log</span></h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-panel">
+            <div class="job-header-flex">
+              <img src="./assets/work/capgemini.png" alt="Capgemini" class="company-logo">
+              <div class="job-title-info">
+                <h3>Software Engineer <span class="text-accent">@ Capgemini</span></h3>
+                <span class="job-date">Mar 2024 - Present</span>
+              </div>
             </div>
-          </h3>
-          <p class="project-sub">In-Memory Data Store</p>
-          <p class="project-desc">Redis compatible In-memory store with Persistance support (AOF & RDB). It aims to
-            provide the simplicity and
-            speed of Redis while leveraging Go's powerful concurrency features. It is compatible with the RESP.</p>
-          <div class="tech-tags">
-            <span>Go</span>
-            <span>In-memory</span>
-            <span>KV store</span>
-            <span>Cache</span>
-            <span>RESP</span>
-            <span>AOF</span>
-            <span>RDB</span>
-            <span>Concurrency</span>
+            <ul class="job-tasks mt-3">
+              <li>Architected a high-throughput <strong>Ticket Dispatcher</strong> pipeline using <strong>Spring Boot & Kafka</strong>, automating workflow assignment for over 3,000 active agents with sub-second latency.</li>
+              <li>Engineered an <strong>Agentic AI Business Analyst</strong> using <strong>LangChain</strong> and <strong>LangGraph</strong>, transforming unstructured business requests into structured execution plans.</li>
+              <li>Developed a highly optimized <strong>RAG backend</strong> leveraging <strong>PGVector</strong>, efficiently serving context-aware responses to 10k+ daily active users.</li>
+              <li>Designed and deployed an <strong>LLM generation microservice</strong> via <strong>FastAPI</strong>, seamlessly integrating Azure OpenAI, Amazon Bedrock, and local Ollama models.</li>
+              <li>Orchestrated containerized deployments across <strong>Kubernetes</strong> clusters utilizing <strong>Helm, ArgoCD</strong>, and <strong>GitLab CI/CD</strong> for zero-downtime rollouts.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-panel">
+            <div class="job-header-flex">
+              <img src="./assets/work/ltimindtree.png" alt="LTI Mindtree" class="company-logo">
+              <div class="job-title-info">
+                <h3>Cloud Engineer Intern <span class="text-accent">@ LTI Mindtree</span></h3>
+                <span class="job-date">Aug 2023 - Oct 2023</span>
+              </div>
+            </div>
+            <ul class="job-tasks mt-3">
+              <li>Designed and implemented scalable cloud topologies across <strong>AWS</strong> compute, storage, and networking layers (EC2, S3, RDS).</li>
+              <li>Automated infrastructure provisioning and state management utilizing <strong>Terraform</strong> (IaC).</li>
+              <li>Optimized container orchestration and deployment strategies using <strong>AWS ECS</strong> and <strong>Kubernetes (EKS)</strong>.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-panel">
+            <div class="job-header-flex">
+              <img src="./assets/work/ridobiko.webp" alt="Ridobiko" class="company-logo">
+              <div class="job-title-info">
+                <h3>Flutter Developer Intern <span class="text-accent">@ Ridobiko</span></h3>
+                <span class="job-date">Nov 2022 - Apr 2023</span>
+              </div>
+            </div>
+            <ul class="job-tasks mt-3">
+              <li>Spearheaded the integration of <strong>DigiLocker e-KYC</strong> utilizing Flutter and OAuth 2.0, significantly streamlining user onboarding.</li>
+              <li>Architected and deployed robust modules including dynamic coupon engines, automated GST computation, and secure wallet payment systems.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section fade-in">
+      <div class="section-header">
+        <h2><span class="text-accent">03.</span> <span class="glitch-text" data-value="Tech Stack">Tech Stack</span></h2>
+      </div>
+      <div class="skills-dashboard">
+        <div class="skills-chart-container glass-panel">
+          <canvas id="skills-radar"></canvas>
+          <div class="radar-overlay-text">Skill Telemetry Active</div>
+        </div>
+        <div class="skills-list-container">
+          <div class="skills-grid compact-grid">
+            <div class="skill-category glass-panel" data-category="Languages">
+              <h3>Languages</h3>
+              <div class="skill-tags">
+                <span><img src="https://skillicons.dev/icons?i=go" alt="Go"> Go</span>
+                <span><img src="https://skillicons.dev/icons?i=python" alt="Python"> Python</span>
+                <span><img src="https://skillicons.dev/icons?i=java" alt="Java"> Java</span>
+                <span><img src="https://skillicons.dev/icons?i=ts" alt="TypeScript"> TypeScript</span>
+                <span><img src="https://skillicons.dev/icons?i=js" alt="JavaScript"> JavaScript</span>
+                <span><img src="https://skillicons.dev/icons?i=dart" alt="Dart"> Dart</span>
+              </div>
+            </div>
+            <div class="skill-category glass-panel" data-category="GenAI">
+              <h3>Generative AI & LLMs</h3>
+              <div class="skill-tags">
+                <span><img src="https://skills.syvixor.com/api/icons?perline=15&i=langchain&theme=light" alt="Langchain"> Langchain</span>
+                <span><img src="https://skillicons.dev/icons?i=py" alt="LangGraph"> LangGraph</span>
+                <span><img src="https://skills.syvixor.com/api/icons?perline=15&i=googleadk&theme=light" alt="ADK"> Google ADK</span>
+                <span><img src="https://skillicons.dev/icons?i=azure" alt="Azure OpenAI"> Azure OpenAI</span>
+                <span><img src="https://skillicons.dev/icons?i=postgres" alt="PGVector"> PGVector (RAG)</span>
+                <span><img src="https://skillicons.dev/icons?i=aws" alt="Bedrock"> Amazon Bedrock</span>
+              </div>
+            </div>
+            <div class="skill-category glass-panel" data-category="Backend">
+              <h3>Backend Architecture</h3>
+              <div class="skill-tags">
+                <span><img src="https://skillicons.dev/icons?i=spring" alt="Spring"> Spring Boot</span>
+                <span><img src="https://skillicons.dev/icons?i=nodejs" alt="NodeJS"> Node JS</span>
+                <span><img src="https://skillicons.dev/icons?i=nestjs" alt="NestJS"> NestJs</span>
+                <span><img src="https://skills.syvixor.com/api/icons?perline=15&i=grpc" alt="gRPC"> gRPC</span>
+                <span><img src="https://skillicons.dev/icons?i=graphql" alt="GraphQL"> GraphQL</span>
+                <span><img src="https://skillicons.dev/icons?i=fastapi" alt="FastAPI"> FastAPI</span>
+              </div>
+            </div>
+            <div class="skill-category glass-panel" data-category="Cloud">
+              <h3>Cloud & DevOps</h3>
+              <div class="skill-tags">
+                <span><img src="https://skillicons.dev/icons?i=aws" alt="AWS"> AWS</span>
+                <span><img src="https://skillicons.dev/icons?i=azure" alt="Azure"> Azure</span>
+                <span><img src="https://skillicons.dev/icons?i=kubernetes" alt="K8s"> Kubernetes</span>
+                <span><img src="https://skillicons.dev/icons?i=docker" alt="Docker"> Docker</span>
+                <span><img src="https://skillicons.dev/icons?i=terraform" alt="Terraform"> Terraform</span>
+                <span><img src="https://raw.githubusercontent.com/syvixor/skills-icons/refs/heads/main/icons/argocd.svg" alt="ArgoCD"> ArgoCD</span>
+                <span><img src="https://skillicons.dev/icons?i=linux" alt="Linux"> Linux</span>
+              </div>
+            </div>
+            <div class="skill-category glass-panel" data-category="Data">
+              <h3>Data & Messaging</h3>
+              <div class="skill-tags">
+                <span><img src="https://skillicons.dev/icons?i=kafka" alt="Kafka"> Kafka</span>
+                <span><img src="https://skillicons.dev/icons?i=rabbitmq" alt="RabbitMQ"> RabbitMQ</span>
+                <span><img src="https://skillicons.dev/icons?i=postgres" alt="Postgres"> PostgreSQL</span>
+                <span><img src="https://skillicons.dev/icons?i=mongodb" alt="MongoDB"> Mongo</span>
+                <span><img src="https://skillicons.dev/icons?i=redis" alt="Redis"> Redis</span>
+              </div>
+            </div>
+            <div class="skill-category glass-panel" data-category="Observability">
+              <h3>Observability & Tools</h3>
+              <div class="skill-tags">
+                <span><img src="https://skills.syvixor.com/api/icons?perline=15&i=opentelemetry&theme=light" alt="OTel"> OTel</span>
+                <span><img src="https://skills.syvixor.com/api/icons?perline=15&i=grafana" alt="Grafana"> Grafana</span>
+                <span><img src="https://skills.syvixor.com/api/icons?perline=15&i=prometheus" alt="Prometheus"> Prometheus</span>
+                <span><img src="https://skills.syvixor.com/api/icons?perline=15&i=loki" alt="Loki"> Loki</span>
+                <span><img src="https://skills.syvixor.com/api/icons?perline=15&i=tempo" alt="Tempo"> Tempo</span>
+                <span><img src="https://skillicons.dev/icons?i=flutter" alt="Flutter"> Flutter</span>
+                <span><img src="https://skillicons.dev/icons?i=gitlab" alt="GitLab"> GitLab</span>
+                <span><img src="https://skillicons.dev/icons?i=git" alt="Git"> Git</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section fade-in">
+      <div class="section-header">
+        <h2><span class="text-accent">04.</span> <span class="glitch-text" data-value="Selected Projects">Selected Projects</span></h2>
+      </div>
+      <div class="projects-grid">
+        <!-- PlayStack -->
+        <div class="project-card glass-panel has-img">
+          <div class="project-img-wrapper">
+             <img src="https://github.com/subrotokumar/playstack/raw/main/docs/assets/architecture.svg" alt="PlayStack" class="project-banner">
+          </div>
+          <div class="project-content mt-3">
+            <div class="project-status">
+              <span class="status-dot pulsing"></span> <span class="status-text">Production</span>
+            </div>
+            <div class="project-top">
+              <h3 class="project-title">PlayStack</h3>
+              <div class="project-links">
+                <a href="https://github.com/subrotokumar/playstack" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+              </div>
+            </div>
+            <p class="project-desc">End-to-End Adaptive Bitrate Video Streaming Platform with Automated Multi-Quality Transcoding.</p>
+            <div class="project-metrics">
+              <span>Build: Passing</span> | <span>Uptime: 99.9%</span>
+            </div>
+            <div class="project-tech">
+              <span>Go</span><span>K8s</span><span>FFmpeg</span><span>Terraform</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Rover -->
+        <div class="project-card glass-panel has-img">
+          <div class="project-img-wrapper">
+             <img src="./assets/project/rover-server.png" alt="Rover" class="project-banner">
+          </div>
+          <div class="project-content mt-3">
+            <div class="project-status">
+              <span class="status-dot pulsing"></span> <span class="status-text">Production</span>
+            </div>
+            <div class="project-top">
+              <h3 class="project-title">Rover</h3>
+              <div class="project-links">
+                <a class="external-link" href="https://hub.docker.com/r/subrotokumar/rover" target="_blank" title="Docker"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg></a>
+                <a href="https://github.com/subrotokumar/rover" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+              </div>
+            </div>
+            <p class="project-desc">Redis compatible In-memory store with Persistence support (AOF & RDB). Compatible with the RESP.</p>
+            <div class="project-metrics">
+              <span>Latency: <1ms</span> | <span>Test Cov: 92%</span>
+            </div>
+            <div class="project-tech">
+              <span>Go</span><span>RESP</span><span>Cache</span>
+            </div>
           </div>
         </div>
 
         <!-- Stackctl -->
-        <div class="project-card fade-in">
-          <img src="https://github.com/subrotokumar/stackctl/raw/main/public/demo.gif" alt="Stackctl CLI"
-            class="project-img">
-          <h3>
-            <span>Stackctl CLI</span>
-            <a class="github-link" href="https://github.com/subrotokumar/stackctl" target="_blank">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-              </svg>
-            </a>
-          </h3>
-          <p class="project-sub">Java Project Toolkit Cli</p>
-          <p class="project-desc">A powerful TUI-powered developer toolkit that accelerates Java development with
-            instant project creation, integrated framework support, and smooth task execution.</p>
-          <div class="tech-tags">
-            <span>Go</span>
-            <span>Spring Boot</span>
-            <span>Quarkus</span>
-            <span>CLI</span>
-            <span>TUI</span>
-            <span>Bubbletea</span>
-            <span>Lipgloss</span>
+        <div class="project-card glass-panel has-img">
+          <div class="project-img-wrapper">
+             <img src="https://github.com/subrotokumar/stackctl/raw/main/public/demo.gif" alt="Stackctl" class="project-banner">
+          </div>
+          <div class="project-content mt-3">
+            <div class="project-status">
+              <span class="status-dot pulsing"></span> <span class="status-text">Production</span>
+            </div>
+            <div class="project-top">
+              <h3 class="project-title">Stackctl CLI</h3>
+              <div class="project-links">
+                <a href="https://github.com/subrotokumar/stackctl" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+              </div>
+            </div>
+            <p class="project-desc">A TUI-powered developer toolkit that accelerates Java development with instant project creation.</p>
+            <div class="project-metrics">
+              <span>Downloads: 5k+</span> | <span>Build: Passing</span>
+            </div>
+            <div class="project-tech">
+              <span>Go</span><span>Bubbletea</span><span>CLI</span>
+            </div>
           </div>
         </div>
 
         <!-- LBX -->
-        <div class="project-card fade-in">
-          <img src="./assets/project/lbx.png" alt="LBX" class="project-img" />
-          <h3>
-            <span>LBX</span>
-            <a class="github-link" href="https://github.com/subrotokumar/lbx" target="_blank">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-              </svg>
-            </a>
-          </h3>
-          <p class="project-sub">LoadBalancer in Go that keeps your traffic flowing smoothly!</p>
-          <p class="project-desc">
-          <p class="project-desc">
-            Supporting service discovery, round-robin request distribution,
-            and automatic failover to ensure high availability and smooth traffic management.
-          </p>
-          </p>
-          <div class="tech-tags"><span>Go</span><span>Docker</span><span>Networking</span></div>
+        <div class="project-card glass-panel has-img">
+          <div class="project-img-wrapper">
+             <img src="./assets/project/lbx.png" alt="LBX" class="project-banner">
+          </div>
+          <div class="project-content mt-3">
+            <div class="project-status">
+              <span class="status-dot pulsing"></span> <span class="status-text">Production</span>
+            </div>
+            <div class="project-top">
+              <h3 class="project-title">LBX</h3>
+              <div class="project-links">
+                <a href="https://github.com/subrotokumar/lbx" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+              </div>
+            </div>
+            <p class="project-desc">LoadBalancer in Go supporting service discovery, round-robin request distribution, and automatic failover.</p>
+            <div class="project-metrics">
+              <span>Traffic: Routed</span> | <span>Health: 100%</span>
+            </div>
+            <div class="project-tech">
+              <span>Go</span><span>Docker</span><span>Networking</span>
+            </div>
+          </div>
         </div>
 
-
-
-
+        <!-- Kurumi -->
+        <div class="project-card glass-panel has-img">
+          <div class="project-img-wrapper">
+             <img src="./assets/project/kurumi.png" alt="Kurumi" class="project-banner">
+          </div>
+          <div class="project-content mt-3">
+            <div class="project-status">
+              <span class="status-dot pulsing"></span> <span class="status-text">Production</span>
+            </div>
+            <div class="project-top">
+              <h3 class="project-title">Kurumi</h3>
+              <div class="project-links">
+                <a class="external-link" href="https://play.google.com/store/apps/details?id=com.subrotokumar.kurumi" target="_blank" title="Google Playstore"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg></a>
+                <a href="https://github.com/subrotokumar/kurumi" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+              </div>
+            </div>
+            <p class="project-desc">A sleek AniList client powered by GraphQL. Effortlessly discover and track anime and manga.</p>
+            <div class="project-metrics">
+              <span>Play Store Live</span> | <span>Rating: 4.8</span>
+            </div>
+            <div class="project-tech">
+              <span>Flutter</span><span>GraphQL</span><span>Riverpod</span>
+            </div>
+          </div>
+        </div>
 
         <!-- Comet -->
-        <div class="project-card fade-in">
-          <img src="./assets/project/comet.png" alt="Comet" class="project-img" />
-          <h3>
-            <span>Comet</span>
-            <a class="github-link" href="https://github.com/subrotokumar/comet" target="_blank">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-              </svg>
-            </a>
-          </h3>
-          <p class="project-sub">Crypto & NFT wallet</p>
-          <p class="project-desc">A secure cryptocurrency wallet with support for
-            wallet encryption, and ERC20 & NFT interaction. Provides a transaction facility,
-            tracks transaction history and offers a dedicated NFT explorer.</p>
-          <!-- <p class="project-role"><strong>Role:</strong> Backend Lead</p> -->
-          <div class="tech-tags">
-            <span>Flutter</span><span>Web3Dart</span><span>ERC20</span><span>ERC721</span>
+        <div class="project-card glass-panel has-img">
+          <div class="project-img-wrapper">
+             <img src="./assets/project/comet.png" alt="Comet" class="project-banner">
+          </div>
+          <div class="project-content mt-3">
+            <div class="project-status">
+              <span class="status-dot pulsing"></span> <span class="status-text">Production</span>
+            </div>
+            <div class="project-top">
+              <h3 class="project-title">Comet</h3>
+              <div class="project-links">
+                <a href="https://github.com/subrotokumar/comet" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+              </div>
+            </div>
+            <p class="project-desc">A secure cryptocurrency wallet with support for ERC20 & NFT interactions.</p>
+            <div class="project-metrics">
+              <span>Mainnet Active</span> | <span>Security: OK</span>
+            </div>
+            <div class="project-tech">
+              <span>Flutter</span><span>Web3Dart</span><span>ERC20</span>
+            </div>
           </div>
         </div>
 
         <!-- Helios -->
-        <div class="project-card fade-in">
-          <img src="./assets/project/helios.png" alt="Helios" class="project-img" />
-          <h3>
-            <span>Helios</span>
-            <a class="github-link" href="https://github.com/subrotokumar/helios" target="_blank">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-              </svg>
-            </a>
-          </h3>
-          <p class="project-sub">Minimalist Web Framework</p>
-          <p class="project-desc">A lightweight Python web framework built from scratch on top of WSGI (Web Server
-            Gateway
-            Interface), designed to simplify backend API development with intuitive routing and
-            flexible middleware support.</p>
-          <div class="tech-tags"><span>Python</span><span>API</span><span>WSGI</span></div>
-        </div>
-
-        <!-- Moriko -->
-        <div class="project-card fade-in">
-          <img src="./assets/project/moriko.png" alt="Moriko" class="project-img" />
-          <h3>
-            <span>Moriko</span>
-            <a class="github-link" href="https://github.com/subrotokumar/moriko" target="_blank">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-              </svg>
-            </a>
-          </h3>
-          <p class="project-sub">Your Pocket Manga Reader</p>
-          <p class="project-desc">A smooth and intuitive manga reader with support for high-quality images, bookmarking.
-            Designed for a distraction-free, immersive reading experience — all in your pocket.</p>
-          <!-- <p class="project-role"><strong>Role:</strong> App Developer</p> -->
-          <div class="tech-tags">
-            <span>Flutter</span>
-            <span>Dart</span>
-            <span>API</span>
-            <span>Retrofit</span>
-            <span>Riverpod</span>
-            <span>Isar DB</span>
+        <div class="project-card glass-panel has-img">
+          <div class="project-img-wrapper">
+             <img src="./assets/project/helios.png" alt="Helios" class="project-banner">
+          </div>
+          <div class="project-content mt-3">
+            <div class="project-status">
+              <span class="status-dot pulsing"></span> <span class="status-text">Production</span>
+            </div>
+            <div class="project-top">
+              <h3 class="project-title">Helios</h3>
+              <div class="project-links">
+                <a href="https://github.com/subrotokumar/helios" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+              </div>
+            </div>
+            <p class="project-desc">A lightweight Python web framework built from scratch on top of WSGI for simplifying backend API development.</p>
+            <div class="project-metrics">
+              <span>Build: Passing</span> | <span>PyPI Active</span>
+            </div>
+            <div class="project-tech">
+              <span>Python</span><span>WSGI</span><span>Backend</span>
+            </div>
           </div>
         </div>
 
         <!-- Docsync -->
-        <div class="project-card fade-in">
-          <img src="./assets/project/docsync.png" alt="Docsync" class="project-img" />
-          <h3>
-            <span>Docsync</span>
-            <a class="github-link" href="https://github.com/subrotokumar/doc-sync" target="_blank">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-              </svg>
-            </a>
-          </h3>
-          <p class="project-sub">Real-time Collaboration Tool</p>
-          <p class="project-desc">Google Docs-style web app supporting real-time text editing using Socket.IO.
-            Includes collaborative editing, and seamless syncing between users.
-          </p>
-          <!-- <p class="project-role"><strong>Role:</strong> Full Stack Dev</p> -->
-          <div class="tech-tags">
-            <span>Flutter</span>
-            <span>Socket.IO</span>
-            <span>Node</span>
-            <span>MongoDB</span>
-            <span>Quill</span>
+        <div class="project-card glass-panel has-img">
+          <div class="project-img-wrapper">
+             <img src="./assets/project/docsync.png" alt="Docsync" class="project-banner">
           </div>
-        </div>
-
-        <!-- 1inch Dex Clone -->
-        <div class="project-card fade-in">
-          <img src="/assets/project/1inchdex.png" alt="1inch DEX" class="project-img" />
-          <h3>
-            <span>1Inch DEX</span>
-            <div class="project-links">
-              <a class="external-link" href="https://fascinating-empanada-ff7997.netlify.app/" target="_blank"
-                title="Deployed App">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
-                </svg>
-              </a>
-              <a class="github-link" href="https://github.com/subrotokumar/1inch-dex" target="_blank">
-                <svg viewBox="0 0 24 24">
-                  <path
-                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg>
-              </a>
+          <div class="project-content mt-3">
+            <div class="project-status">
+              <span class="status-dot pulsing"></span> <span class="status-text">Production</span>
             </div>
-          </h3>
-          <p class="project-sub">1INCH DEX: Token Swap</p>
-          <p class="project-desc">A token swap application enabling seamless exchange of 13 crypto tokens with MetaMask
-            integration. Built on top of the 1Inch aggregator powered by React.</p>
-          <!-- <p class="project-role"><strong>Role:</strong> Smart Contract Integrator</p> -->
-          <div class="tech-tags">
-            <span>Web3</span>
-            <span>Solidity</span>
-            <span>React</span>
-            <span>DEX</span>
-            <span>Walletconnect</span>
+            <div class="project-top">
+              <h3 class="project-title">Docsync</h3>
+              <div class="project-links">
+                <a href="https://github.com/subrotokumar/doc-sync" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+              </div>
+            </div>
+            <p class="project-desc">Google Docs-style web app supporting real-time text editing using Socket.IO.</p>
+            <div class="project-metrics">
+              <span>WS: Connected</span> | <span>Latency: 24ms</span>
+            </div>
+            <div class="project-tech">
+              <span>Flutter</span><span>Socket.IO</span><span>MongoDB</span>
+            </div>
           </div>
         </div>
 
+        <!-- 1inch DEX -->
+        <div class="project-card glass-panel has-img">
+          <div class="project-img-wrapper">
+             <img src="/assets/project/1inchdex.png" alt="1Inch DEX" class="project-banner">
+          </div>
+          <div class="project-content mt-3">
+            <div class="project-status">
+              <span class="status-dot pulsing"></span> <span class="status-text">Production</span>
+            </div>
+            <div class="project-top">
+              <h3 class="project-title">1Inch DEX</h3>
+              <div class="project-links">
+                <a class="external-link" href="https://fascinating-empanada-ff7997.netlify.app/" target="_blank" title="Deployed App"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg></a>
+                <a href="https://github.com/subrotokumar/1inch-dex" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+              </div>
+            </div>
+            <p class="project-desc">A token swap application enabling seamless exchange of 13 crypto tokens with MetaMask integration.</p>
+            <div class="project-metrics">
+              <span>Web3: Connected</span> | <span>Smart Contract: OK</span>
+            </div>
+            <div class="project-tech">
+              <span>Web3</span><span>React</span><span>DEX</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
-  </section>
-  <section id="contact">
-    <p class="section__text__p1">Get in Touch</p>
-    <h1 class="title">Contact Me</h1>
-    <div class="contact-info-upper-container">
-      <div class="contact-info-container">
-        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-        <p><a href="mailto:subrotokumar@outlook.in">Email</a></p>
+    <section id="contact" class="section fade-in">
+      <div class="section-header text-center" style="margin-bottom: 20px;">
+        <h2 style="justify-content: center;"><span class="text-accent">05.</span> <span class="glitch-text" data-value="Init Handshake">Init Handshake</span></h2>
       </div>
-      <div class="contact-info-container">
-        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-        <p><a href="https://www.linkedin.com/in/isubrotokumar"> LinkedIn</a></p>
+      <div class="contact-terminal glass-panel">
+        <div class="terminal-header">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="terminal-title">~/contact - HTTP 200 OK</span>
+        </div>
+        <div class="terminal-body">
+          <div class="cmd-line">
+            <span class="prompt">$</span> curl -X POST https://subrotokumar.dev/api/contact \
+          </div>
+          <div class="cmd-line indented">
+            -H "Content-Type: application/json" \
+          </div>
+          <div class="cmd-line indented">
+            -d '{"message": "Let\'s build something amazing."}'
+          </div>
+          <br>
+          <div class="json-response">
+            {<br>
+            &nbsp;&nbsp;<span class="json-key">"status"</span>: <span class="json-string">"ready for new opportunities"</span>,<br>
+            &nbsp;&nbsp;<span class="json-key">"email"</span>: <a href="mailto:subrotokumar@outlook.in" class="json-link">"subrotokumar@outlook.in"</a>,<br>
+            &nbsp;&nbsp;<span class="json-key">"action"</span>: <a href="mailto:subrotokumar@outlook.in" class="btn btn-primary btn-small">Execute Handshake</a><br>
+            }
+          </div>
+        </div>
       </div>
-      <div class="contact-info-container">
-        <img src="./assets/github.png" alt="Github icon" class="icon contact-icon" />
-        <p><a href="https://github.com/subrotokumar"> GitHub</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>Designed & Built by Subroto Kumar</p>
+      <div class="terminal-text small"><span class="prompt">$</span> exit</div>
+    </div>
+  </footer>
+
+  <!-- Command Palette -->
+  <div id="command-palette" class="cmd-hidden">
+    <div class="cmd-overlay" onclick="toggleCommandPalette()"></div>
+    <div class="cmd-modal">
+      <div class="cmd-header">
+        <span class="prompt">~/$</span>
+        <input type="text" id="cmd-input" placeholder="Type a command or search... (e.g. goto projects)" autocomplete="off">
+      </div>
+      <div class="cmd-body">
+        <ul id="cmd-list">
+          <li class="cmd-item active" data-action="goto" data-target="#about">goto about <span class="cmd-shortcut">Enter</span></li>
+          <li class="cmd-item" data-action="goto" data-target="#experience">goto experience <span class="cmd-shortcut">Enter</span></li>
+          <li class="cmd-item" data-action="goto" data-target="#skills">goto skills <span class="cmd-shortcut">Enter</span></li>
+          <li class="cmd-item" data-action="goto" data-target="#projects">goto projects <span class="cmd-shortcut">Enter</span></li>
+          <li class="cmd-item" data-action="goto" data-target="#contact">goto contact <span class="cmd-shortcut">Enter</span></li>
+          <li class="cmd-item" data-action="link" data-target="https://resume.subrotokumar.dev">fetch resume <span class="cmd-shortcut">Enter</span></li>
+          <li class="cmd-item" data-action="easter" data-target="rm">sudo rm -rf / <span class="cmd-shortcut">Enter</span></li>
+        </ul>
+        <div id="cmd-output" style="display: none; font-family: var(--font-mono); color: var(--red); padding: 10px; margin-top: 10px; border-top: 1px solid var(--border-color);"></div>
+      </div>
+      <div class="cmd-footer">
+        <span><kbd>↑</kbd> <kbd>↓</kbd> navigate</span>
+        <span><kbd>Enter</kbd> select</span>
+        <span><kbd>Esc</kbd> close</span>
       </div>
     </div>
-  </section>
-  <footer>
-    <nav>
-      <div class="nav-links-container">
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-    <p>Copyright &#169; 2023-2026 Subroto Kumar. All Rights Reserved.</p>
-  </footer>
-  <!-- Scroll to Top Button -->
-  <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M12 19V5M5 12l7-7 7 7" />
-    </svg>
-  </button>
+  </div>
 
   <script src="script.js"></script>
 </body>
-
 </html>
