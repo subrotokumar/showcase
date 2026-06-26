@@ -16,19 +16,20 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById("typed-text")) {
     type();
   }
-  
+
   // Initialize scroll animations
   initScrollAnimations();
-  
+
   // Initialize 3D tilt effect on project cards
   initTiltEffect();
 });
 
 // Typing Animation
 const roles = [
-  "Software Engineer",
-  "Backend Developer",
+  "Backend Engineer (Go,Java,Python)",
+  "Kubernetes Administrator",
   "DevOps Engineer",
+  "MLOps Engineer",
   "Cloud Architect"
 ];
 
@@ -72,12 +73,12 @@ function initScrollAnimations() {
         if (entry.target.classList.contains('project-card') || entry.target.classList.contains('timeline-item')) {
           entry.target.style.transitionDelay = `${delay}s`;
           delay += 0.1;
-          
+
           setTimeout(() => {
             entry.target.style.transitionDelay = '0s';
           }, (delay * 1000) + 600);
         }
-        
+
         entry.target.classList.add('visible');
         observer.unobserve(entry.target);
       }
@@ -85,7 +86,7 @@ function initScrollAnimations() {
   }, observerOptions);
 
   const elementsToAnimate = document.querySelectorAll('.fade-in');
-  
+
   elementsToAnimate.forEach(el => {
     observer.observe(el);
   });
@@ -94,24 +95,24 @@ function initScrollAnimations() {
 // 3D Tilt Effect for Project Cards
 function initTiltEffect() {
   const projectCards = document.querySelectorAll('.project-card');
-  
+
   projectCards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
       if (window.innerWidth <= 768) return;
-      
+
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      
+
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
-      
+
       const rotateX = ((y - centerY) / centerY) * -5;
       const rotateY = ((x - centerX) / centerX) * 5;
-      
+
       card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
     });
-    
+
     card.addEventListener('mouseleave', () => {
       card.style.transform = '';
     });
@@ -144,23 +145,23 @@ const glitchObserver = new IntersectionObserver((entries) => {
       let iterations = 0;
       const element = entry.target;
       const originalText = element.dataset.value;
-      
+
       clearInterval(element.glitchInterval);
-      
+
       element.glitchInterval = setInterval(() => {
         element.innerText = originalText.split("")
           .map((letter, index) => {
-            if(index < iterations) return originalText[index];
+            if (index < iterations) return originalText[index];
             return letters[Math.floor(Math.random() * letters.length)]
           })
           .join("");
-        
-        if(iterations >= originalText.length){ 
+
+        if (iterations >= originalText.length) {
           clearInterval(element.glitchInterval);
         }
         iterations += 1 / 3;
       }, 30);
-      
+
       glitchObserver.unobserve(element);
     }
   });
@@ -195,14 +196,14 @@ document.addEventListener('keydown', (e) => {
     e.preventDefault();
     toggleCommandPalette();
   }
-  
+
   if (!cmdPalette.classList.contains('cmd-hidden')) {
     if (e.key === 'Escape') {
       toggleCommandPalette();
     }
-    
+
     const visibleItems = Array.from(cmdItems).filter(item => item.style.display !== 'none');
-    
+
     if (e.key === 'ArrowDown') {
       e.preventDefault();
       selectedCmdIndex = (selectedCmdIndex + 1) % visibleItems.length;
@@ -229,7 +230,7 @@ if (cmdInput) {
 function filterCommands(query) {
   let firstVisible = -1;
   let count = 0;
-  
+
   cmdItems.forEach((item, index) => {
     const text = item.textContent.toLowerCase();
     if (text.includes(query)) {
@@ -241,7 +242,7 @@ function filterCommands(query) {
     }
     item.classList.remove('active');
   });
-  
+
   selectedCmdIndex = 0;
   const visibleItems = Array.from(cmdItems).filter(item => item.style.display !== 'none');
   if (visibleItems.length > 0) {
@@ -259,7 +260,7 @@ function updateCmdSelection(visibleItems) {
 function executeCommand(item) {
   const action = item.dataset.action;
   const target = item.dataset.target;
-  
+
   if (action === 'goto') {
     toggleCommandPalette();
     const el = document.querySelector(target);
@@ -322,10 +323,10 @@ if (canvas) {
     update() {
       this.x += this.vx;
       this.y += this.vy;
-      
+
       if (this.x < 0 || this.x > width) this.vx = -this.vx;
       if (this.y < 0 || this.y > height) this.vy = -this.vy;
-      
+
       if (mouse.x != null && mouse.y != null) {
         let dx = mouse.x - this.x;
         let dy = mouse.y - this.y;
@@ -341,7 +342,7 @@ if (canvas) {
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(0, 240, 255, 0.5)';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
       ctx.fill();
     }
   }
@@ -357,19 +358,19 @@ if (canvas) {
   function animateParticles() {
     requestAnimationFrame(animateParticles);
     ctx.clearRect(0, 0, width, height);
-    
+
     for (let i = 0; i < particles.length; i++) {
       particles[i].update();
       particles[i].draw();
-      
+
       for (let j = i; j < particles.length; j++) {
         let dx = particles[i].x - particles[j].x;
         let dy = particles[i].y - particles[j].y;
         let distance = Math.sqrt(dx * dx + dy * dy);
-        
+
         if (distance < 120) {
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(0, 240, 255, ${1 - distance/120})`;
+          ctx.strokeStyle = `rgba(255, 255, 255, ${(1 - distance / 120) * 0.3})`;
           ctx.lineWidth = 0.5;
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
@@ -387,16 +388,16 @@ if (canvas) {
 const radarCanvas = document.getElementById('skills-radar');
 if (radarCanvas) {
   const radarCtx = radarCanvas.getContext('2d');
-  
+
   // Base Data
   const axes = ['Languages', 'GenAI', 'Backend', 'Cloud', 'Data', 'Observability'];
   const baseScores = [90, 85, 95, 80, 85, 75]; // Initial baseline
-  
+
   // Animation state
   let currentScores = [...baseScores];
   let targetScores = [...baseScores];
   let animationRef;
-  
+
   function resizeRadar() {
     // Keep it sharp on retina displays
     const rect = radarCanvas.parentElement.getBoundingClientRect();
@@ -413,9 +414,9 @@ if (radarCanvas) {
     const size = parseFloat(radarCanvas.style.width);
     const center = size / 2;
     const radius = size * 0.35;
-    
+
     radarCtx.clearRect(0, 0, size, size);
-    
+
     // Draw grid rings
     radarCtx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
     radarCtx.lineWidth = 1;
@@ -432,29 +433,29 @@ if (radarCanvas) {
       radarCtx.closePath();
       radarCtx.stroke();
     }
-    
+
     // Draw axes
     radarCtx.textAlign = 'center';
     radarCtx.textBaseline = 'middle';
     radarCtx.font = '12px "Space Mono", monospace';
-    
+
     for (let j = 0; j < axes.length; j++) {
       const angle = (Math.PI * 2 * j) / axes.length - Math.PI / 2;
       const x = center + Math.cos(angle) * radius;
       const y = center + Math.sin(angle) * radius;
-      
+
       radarCtx.beginPath();
       radarCtx.moveTo(center, center);
       radarCtx.lineTo(x, y);
       radarCtx.stroke();
-      
+
       // Labels
       radarCtx.fillStyle = 'rgba(255, 255, 255, 0.6)';
       const labelX = center + Math.cos(angle) * (radius + 25);
       const labelY = center + Math.sin(angle) * (radius + 25);
       radarCtx.fillText(axes[j], labelX, labelY);
     }
-    
+
     // Draw Data Polygon
     radarCtx.beginPath();
     for (let j = 0; j < axes.length; j++) {
@@ -467,21 +468,21 @@ if (radarCanvas) {
       else radarCtx.lineTo(x, y);
     }
     radarCtx.closePath();
-    radarCtx.fillStyle = 'rgba(0, 240, 255, 0.2)';
+    radarCtx.fillStyle = 'rgba(59, 130, 246, 0.15)';
     radarCtx.fill();
-    radarCtx.strokeStyle = '#00f0ff';
+    radarCtx.strokeStyle = '#3b82f6';
     radarCtx.lineWidth = 2;
     radarCtx.stroke();
-    
+
     // Draw Data Points
-    radarCtx.fillStyle = '#10b981';
+    radarCtx.fillStyle = '#f4f4f5';
     for (let j = 0; j < axes.length; j++) {
       const angle = (Math.PI * 2 * j) / axes.length - Math.PI / 2;
       const scoreRatio = currentScores[j] / 100;
       const r = radius * scoreRatio;
       const x = center + Math.cos(angle) * r;
       const y = center + Math.sin(angle) * r;
-      
+
       radarCtx.beginPath();
       radarCtx.arc(x, y, 4, 0, Math.PI * 2);
       radarCtx.fill();
@@ -499,9 +500,9 @@ if (radarCanvas) {
         currentScores[i] = targetScores[i];
       }
     }
-    
+
     drawRadar();
-    
+
     if (needsUpdate) {
       animationRef = requestAnimationFrame(animateRadar);
     }
@@ -531,3 +532,58 @@ if (radarCanvas) {
     });
   });
 }
+
+// 6. Premium Interactivity Pack: Custom Cursor & Parallax Grid
+const cursorDot = document.getElementById('cursor-dot');
+const cursorOutline = document.getElementById('cursor-outline');
+const bgGrid = document.getElementById('bg-grid');
+
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
+let outlineX = mouseX;
+let outlineY = mouseY;
+
+window.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+
+  if (cursorDot) {
+    cursorDot.style.top = mouseY + 'px';
+    cursorDot.style.left = mouseX + 'px';
+  }
+
+  // Grid Parallax
+  if (bgGrid) {
+    const xRatio = (mouseX / window.innerWidth - 0.5) * 2; // -1 to 1
+    const yRatio = (mouseY / window.innerHeight - 0.5) * 2;
+    bgGrid.style.transform = `translate(${xRatio * -30}px, ${yRatio * -30}px)`;
+  }
+});
+
+// Animate outline for smooth trailing effect
+function animateCursor() {
+  const dx = mouseX - outlineX;
+  const dy = mouseY - outlineY;
+
+  outlineX += dx * 0.4; // Increased from 0.15 for faster tracking
+  outlineY += dy * 0.4;
+
+  if (cursorOutline) {
+    cursorOutline.style.top = outlineY + 'px';
+    cursorOutline.style.left = outlineX + 'px';
+  }
+
+  requestAnimationFrame(animateCursor);
+}
+if (cursorOutline) animateCursor();
+
+// Magnetic Hover Effect
+const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-category, .cmd-item');
+interactiveElements.forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    if (cursorOutline) cursorOutline.classList.add('hover-state');
+  });
+  el.addEventListener('mouseleave', () => {
+    if (cursorOutline) cursorOutline.classList.remove('hover-state');
+  });
+});
