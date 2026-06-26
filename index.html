@@ -7,23 +7,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Subroto Kumar | Software Engineer - Backend, DevOps & Cloud Architecture</title>
-  <meta name="description" content="Subroto Kumar - Software Engineer specializing in Backend Development, DevOps, Kubernetes, and Cloud Architecture." />
-  
+  <meta name="description"
+    content="Subroto Kumar - Software Engineer specializing in Backend Development, DevOps, Kubernetes, and Cloud Architecture." />
+
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/terminal.png" />
   <link rel="apple-touch-icon" href="./assets/terminal.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-outline" id="cursor-outline"></div>
+
   <canvas id="bg-canvas"></canvas>
-  <div class="background-grid"></div>
-  
+  <div class="background-grid" id="bg-grid"></div>
+
   <nav class="navbar">
     <div class="nav-content">
       <div class="logo">&lt;Subroto/&gt;</div>
@@ -32,7 +38,8 @@
         <li><a href="#experience"><span class="nav-num">02.</span> Experience</a></li>
         <li><a href="#skills"><span class="nav-num">03.</span> Skills</a></li>
         <li><a href="#projects"><span class="nav-num">04.</span> Projects</a></li>
-        <li><a href="https://subrotokumar.github.io/aboutme-cli" target="_blank" class="nav-special">Playground ↗</a></li>
+        <li><a href="https://subrotokumar.github.io/aboutme-cli" target="_blank" class="nav-special">Playground ↗</a>
+        </li>
       </ul>
       <div class="hamburger-icon" onclick="toggleMenu()">
         <span></span><span></span><span></span>
@@ -46,7 +53,8 @@
       <li><a href="#experience" onclick="toggleMenu()">02. Experience</a></li>
       <li><a href="#skills" onclick="toggleMenu()">03. Skills</a></li>
       <li><a href="#projects" onclick="toggleMenu()">04. Projects</a></li>
-      <li><a href="https://subrotokumar.github.io/aboutme-cli" onclick="toggleMenu()" class="nav-special">Playground ↗</a></li>
+      <li><a href="https://subrotokumar.github.io/aboutme-cli" onclick="toggleMenu()" class="nav-special">Playground
+          ↗</a></li>
     </ul>
   </div>
 
@@ -55,31 +63,44 @@
       <div class="hero-layout">
         <div class="hero-content">
           <div class="terminal-badge">
-             <span class="pulse-dot"></span> System Online
+            <span class="pulse-dot"></span> System Online
           </div>
           <h1 class="hero-title">Subroto Kumar</h1>
           <div class="terminal-text">
             <span class="prompt">~/$</span> <span id="typed-text"></span><span class="cursor">_</span>
           </div>
           <p class="hero-subtitle">
-            Building systems that stay steady — the kind that don’t panic when traffic surges or when no one’s around to babysit them. Focus on distributed services, event-driven pipelines, and cloud infrastructure.
+            Building systems that stay steady — the kind that don’t panic when traffic surges or when no one’s around to
+            babysit them. Focus on distributed services, event-driven pipelines, and cloud infrastructure.
           </p>
           <div class="hero-actions">
             <button class="btn btn-primary" onclick="window.open('https://resume.subrotokumar.dev')">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+              </svg>
               Deploy CV
             </button>
             <a href="#contact" class="btn btn-secondary">Init Contact</a>
           </div>
           <div class="social-links">
             <a href="https://github.com/subrotokumar" target="_blank" title="GitHub">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
             </a>
             <a href="https://linkedin.com/in/isubrotokumar" target="_blank" title="LinkedIn">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
             </a>
-            <a href="https://play.google.com/store/apps/developer?id=Subroto+Kumar&pli=1" target="_blank" title="Play Store">
-               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14l-4.5 4.5V11l4.5 3zM3.4 3L11 10.6V20c0 .4-.4.5-.6.2L3 13.8V3.4C3 3.1 3.2 3 3.4 3zM20 10.3c.6.4.6 1 0 1.4L18.5 13l-5-5 5-5 1.5 1.3zM12.5 1l4.5 4.5-4.5 4.5V1z"/></svg>
+            <a href="https://play.google.com/store/apps/developer?id=Subroto+Kumar&pli=1" target="_blank"
+              title="Play Store">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.5 14l-4.5 4.5V11l4.5 3zM3.4 3L11 10.6V20c0 .4-.4.5-.6.2L3 13.8V3.4C3 3.1 3.2 3 3.4 3zM20 10.3c.6.4.6 1 0 1.4L18.5 13l-5-5 5-5 1.5 1.3zM12.5 1l4.5 4.5-4.5 4.5V1z" />
+              </svg>
             </a>
           </div>
         </div>
@@ -96,15 +117,20 @@
 
     <section id="about" class="section fade-in">
       <div class="section-header">
-        <h2><span class="text-accent">01.</span> <span class="glitch-text" data-value="Architecture & Identity">Architecture & Identity</span></h2>
+        <h2><span class="text-accent">01.</span> <span class="glitch-text"
+            data-value="Architecture & Identity">Architecture & Identity</span></h2>
       </div>
       <div class="about-grid">
         <div class="about-text">
           <p>
-            My work spans <strong>Backend</strong>, <strong>DevOps</strong>, and <strong>AI-systems</strong> — designing scalable microservices, automating deployments, and wiring up LLM and RAG components that actually earn their keep. 
+            My work spans <strong>Backend</strong>, <strong>DevOps</strong>, and <strong>AI-systems</strong> — designing
+            scalable microservices, automating deployments, and wiring up LLM and RAG components that actually earn
+            their keep.
           </p>
           <p>
-            I’m not here to chase hype or reinvent what already works. I’m here to build foundations — code that holds up under pressure, infrastructure that explains itself, and systems that make future engineers nod and say, “Yeah, this was built right.” 🚀
+            I’m not here to chase hype or reinvent what already works. I’m here to build foundations — code that holds
+            up under pressure, infrastructure that explains itself, and systems that make future engineers nod and say,
+            “Yeah, this was built right.” 🚀
           </p>
         </div>
         <div class="certifications-box terminal-window">
@@ -131,7 +157,8 @@
 
     <section id="experience" class="section fade-in">
       <div class="section-header">
-        <h2><span class="text-accent">02.</span> <span class="glitch-text" data-value="Execution Log">Execution Log</span></h2>
+        <h2><span class="text-accent">02.</span> <span class="glitch-text" data-value="Execution Log">Execution
+            Log</span></h2>
       </div>
       <div class="timeline">
         <div class="timeline-item">
@@ -140,16 +167,27 @@
             <div class="job-header-flex">
               <img src="./assets/work/capgemini.png" alt="Capgemini" class="company-logo">
               <div class="job-title-info">
-                <h3>Software Engineer <span class="text-accent">@ Capgemini</span></h3>
-                <span class="job-date">Mar 2024 - Present</span>
+                <h3 class="role-title">Software Engineer</h3>
+                <div class="role-meta">
+                  <span class="company-name">@ Capgemini</span>
+                  <span class="separator">•</span>
+                  <span class="job-date">Mar 2024 - Present</span>
+                </div>
               </div>
             </div>
             <ul class="job-tasks mt-3">
-              <li>Architected a high-throughput <strong>Ticket Dispatcher</strong> pipeline using <strong>Spring Boot & Kafka</strong>, automating workflow assignment for over 3,000 active agents with sub-second latency.</li>
-              <li>Engineered an <strong>Agentic AI Business Analyst</strong> using <strong>LangChain</strong> and <strong>LangGraph</strong>, transforming unstructured business requests into structured execution plans.</li>
-              <li>Developed a highly optimized <strong>RAG backend</strong> leveraging <strong>PGVector</strong>, efficiently serving context-aware responses to 10k+ daily active users.</li>
-              <li>Designed and deployed an <strong>LLM generation microservice</strong> via <strong>FastAPI</strong>, seamlessly integrating Azure OpenAI, Amazon Bedrock, and local Ollama models.</li>
-              <li>Orchestrated containerized deployments across <strong>Kubernetes</strong> clusters utilizing <strong>Helm, ArgoCD</strong>, and <strong>GitLab CI/CD</strong> for zero-downtime rollouts.</li>
+              <li>Architected a high-throughput <strong>Ticket Dispatcher</strong> pipeline using <strong>Spring Boot &
+                  Kafka</strong>, automating workflow assignment for over 3,000 active agents with sub-second latency.
+              </li>
+              <li>Engineered an <strong>Agentic AI Business Analyst</strong> using <strong>LangChain</strong> and
+                <strong>LangGraph</strong>, transforming unstructured business requests into structured execution plans.
+              </li>
+              <li>Developed a highly optimized <strong>RAG backend</strong> leveraging <strong>PGVector</strong>,
+                efficiently serving context-aware responses to 10k+ daily active users.</li>
+              <li>Designed and deployed an <strong>LLM generation microservice</strong> via <strong>FastAPI</strong>,
+                seamlessly integrating Azure OpenAI, Amazon Bedrock, and local Ollama models.</li>
+              <li>Orchestrated containerized deployments across <strong>Kubernetes</strong> clusters utilizing
+                <strong>Helm, ArgoCD</strong>, and <strong>GitLab CI/CD</strong> for zero-downtime rollouts.</li>
             </ul>
           </div>
         </div>
@@ -159,14 +197,21 @@
             <div class="job-header-flex">
               <img src="./assets/work/ltimindtree.png" alt="LTI Mindtree" class="company-logo">
               <div class="job-title-info">
-                <h3>Cloud Engineer Intern <span class="text-accent">@ LTI Mindtree</span></h3>
-                <span class="job-date">Aug 2023 - Oct 2023</span>
+                <h3 class="role-title">Cloud Engineer Intern</h3>
+                <div class="role-meta">
+                  <span class="company-name">@ LTI Mindtree</span>
+                  <span class="separator">•</span>
+                  <span class="job-date">Aug 2023 - Oct 2023</span>
+                </div>
               </div>
             </div>
             <ul class="job-tasks mt-3">
-              <li>Designed and implemented scalable cloud topologies across <strong>AWS</strong> compute, storage, and networking layers (EC2, S3, RDS).</li>
-              <li>Automated infrastructure provisioning and state management utilizing <strong>Terraform</strong> (IaC).</li>
-              <li>Optimized container orchestration and deployment strategies using <strong>AWS ECS</strong> and <strong>Kubernetes (EKS)</strong>.</li>
+              <li>Designed and implemented scalable cloud topologies across <strong>AWS</strong> compute, storage, and
+                networking layers (EC2, S3, RDS).</li>
+              <li>Automated infrastructure provisioning and state management utilizing <strong>Terraform</strong> (IaC).
+              </li>
+              <li>Optimized container orchestration and deployment strategies using <strong>AWS ECS</strong> and
+                <strong>Kubernetes (EKS)</strong>.</li>
             </ul>
           </div>
         </div>
@@ -176,13 +221,19 @@
             <div class="job-header-flex">
               <img src="./assets/work/ridobiko.webp" alt="Ridobiko" class="company-logo">
               <div class="job-title-info">
-                <h3>Flutter Developer Intern <span class="text-accent">@ Ridobiko</span></h3>
-                <span class="job-date">Nov 2022 - Apr 2023</span>
+                <h3 class="role-title">Flutter Developer Intern</h3>
+                <div class="role-meta">
+                  <span class="company-name">@ Ridobiko</span>
+                  <span class="separator">•</span>
+                  <span class="job-date">Nov 2022 - Apr 2023</span>
+                </div>
               </div>
             </div>
             <ul class="job-tasks mt-3">
-              <li>Spearheaded the integration of <strong>DigiLocker e-KYC</strong> utilizing Flutter and OAuth 2.0, significantly streamlining user onboarding.</li>
-              <li>Architected and deployed robust modules including dynamic coupon engines, automated GST computation, and secure wallet payment systems.</li>
+              <li>Spearheaded the integration of <strong>DigiLocker e-KYC</strong> utilizing Flutter and OAuth 2.0,
+                significantly streamlining user onboarding.</li>
+              <li>Architected and deployed robust modules including dynamic coupon engines, automated GST computation,
+                and secure wallet payment systems.</li>
             </ul>
           </div>
         </div>
@@ -191,7 +242,8 @@
 
     <section id="skills" class="section fade-in">
       <div class="section-header">
-        <h2><span class="text-accent">03.</span> <span class="glitch-text" data-value="Tech Stack">Tech Stack</span></h2>
+        <h2><span class="text-accent">03.</span> <span class="glitch-text" data-value="Tech Stack">Tech Stack</span>
+        </h2>
       </div>
       <div class="skills-dashboard">
         <div class="skills-chart-container glass-panel">
@@ -214,9 +266,11 @@
             <div class="skill-category glass-panel" data-category="GenAI">
               <h3>Generative AI & LLMs</h3>
               <div class="skill-tags">
-                <span><img src="https://skills.syvixor.com/api/icons?perline=15&i=langchain&theme=light" alt="Langchain"> Langchain</span>
+                <span><img src="https://skills.syvixor.com/api/icons?perline=15&i=langchain&theme=light"
+                    alt="Langchain"> Langchain</span>
                 <span><img src="https://skillicons.dev/icons?i=py" alt="LangGraph"> LangGraph</span>
-                <span><img src="https://skills.syvixor.com/api/icons?perline=15&i=googleadk&theme=light" alt="ADK"> Google ADK</span>
+                <span><img src="https://skills.syvixor.com/api/icons?perline=15&i=googleadk&theme=light" alt="ADK">
+                  Google ADK</span>
                 <span><img src="https://skillicons.dev/icons?i=azure" alt="Azure OpenAI"> Azure OpenAI</span>
                 <span><img src="https://skillicons.dev/icons?i=postgres" alt="PGVector"> PGVector (RAG)</span>
                 <span><img src="https://skillicons.dev/icons?i=aws" alt="Bedrock"> Amazon Bedrock</span>
@@ -241,7 +295,8 @@
                 <span><img src="https://skillicons.dev/icons?i=kubernetes" alt="K8s"> Kubernetes</span>
                 <span><img src="https://skillicons.dev/icons?i=docker" alt="Docker"> Docker</span>
                 <span><img src="https://skillicons.dev/icons?i=terraform" alt="Terraform"> Terraform</span>
-                <span><img src="https://raw.githubusercontent.com/syvixor/skills-icons/refs/heads/main/icons/argocd.svg" alt="ArgoCD"> ArgoCD</span>
+                <span><img src="https://raw.githubusercontent.com/syvixor/skills-icons/refs/heads/main/icons/argocd.svg"
+                    alt="ArgoCD"> ArgoCD</span>
                 <span><img src="https://skillicons.dev/icons?i=linux" alt="Linux"> Linux</span>
               </div>
             </div>
@@ -258,9 +313,11 @@
             <div class="skill-category glass-panel" data-category="Observability">
               <h3>Observability & Tools</h3>
               <div class="skill-tags">
-                <span><img src="https://skills.syvixor.com/api/icons?perline=15&i=opentelemetry&theme=light" alt="OTel"> OTel</span>
+                <span><img src="https://skills.syvixor.com/api/icons?perline=15&i=opentelemetry&theme=light" alt="OTel">
+                  OTel</span>
                 <span><img src="https://skills.syvixor.com/api/icons?perline=15&i=grafana" alt="Grafana"> Grafana</span>
-                <span><img src="https://skills.syvixor.com/api/icons?perline=15&i=prometheus" alt="Prometheus"> Prometheus</span>
+                <span><img src="https://skills.syvixor.com/api/icons?perline=15&i=prometheus" alt="Prometheus">
+                  Prometheus</span>
                 <span><img src="https://skills.syvixor.com/api/icons?perline=15&i=loki" alt="Loki"> Loki</span>
                 <span><img src="https://skills.syvixor.com/api/icons?perline=15&i=tempo" alt="Tempo"> Tempo</span>
                 <span><img src="https://skillicons.dev/icons?i=flutter" alt="Flutter"> Flutter</span>
@@ -275,13 +332,15 @@
 
     <section id="projects" class="section fade-in">
       <div class="section-header">
-        <h2><span class="text-accent">04.</span> <span class="glitch-text" data-value="Selected Projects">Selected Projects</span></h2>
+        <h2><span class="text-accent">04.</span> <span class="glitch-text" data-value="Selected Projects">Selected
+            Projects</span></h2>
       </div>
       <div class="projects-grid">
         <!-- PlayStack -->
         <div class="project-card glass-panel has-img">
           <div class="project-img-wrapper">
-             <img src="https://github.com/subrotokumar/playstack/raw/main/docs/assets/architecture.svg" alt="PlayStack" class="project-banner">
+            <img src="https://github.com/subrotokumar/playstack/raw/main/docs/assets/architecture.svg" alt="PlayStack"
+              class="project-banner">
           </div>
           <div class="project-content mt-3">
             <div class="project-status">
@@ -290,10 +349,15 @@
             <div class="project-top">
               <h3 class="project-title">PlayStack</h3>
               <div class="project-links">
-                <a href="https://github.com/subrotokumar/playstack" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                <a href="https://github.com/subrotokumar/playstack" target="_blank"><svg width="20" height="20"
+                    viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg></a>
               </div>
             </div>
-            <p class="project-desc">End-to-End Adaptive Bitrate Video Streaming Platform with Automated Multi-Quality Transcoding.</p>
+            <p class="project-desc">End-to-End Adaptive Bitrate Video Streaming Platform with Automated Multi-Quality
+              Transcoding.</p>
             <div class="project-metrics">
               <span>Build: Passing</span> | <span>Uptime: 99.9%</span>
             </div>
@@ -302,11 +366,11 @@
             </div>
           </div>
         </div>
-        
+
         <!-- Rover -->
         <div class="project-card glass-panel has-img">
           <div class="project-img-wrapper">
-             <img src="./assets/project/rover-server.png" alt="Rover" class="project-banner">
+            <img src="./assets/project/rover-server.png" alt="Rover" class="project-banner">
           </div>
           <div class="project-content mt-3">
             <div class="project-status">
@@ -315,13 +379,22 @@
             <div class="project-top">
               <h3 class="project-title">Rover</h3>
               <div class="project-links">
-                <a class="external-link" href="https://hub.docker.com/r/subrotokumar/rover" target="_blank" title="Docker"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg></a>
-                <a href="https://github.com/subrotokumar/rover" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                <a class="external-link" href="https://hub.docker.com/r/subrotokumar/rover" target="_blank"
+                  title="Docker"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                  </svg></a>
+                <a href="https://github.com/subrotokumar/rover" target="_blank"><svg width="20" height="20"
+                    viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg></a>
               </div>
             </div>
-            <p class="project-desc">Redis compatible In-memory store with Persistence support (AOF & RDB). Compatible with the RESP.</p>
+            <p class="project-desc">Redis compatible In-memory store with Persistence support (AOF & RDB). Compatible
+              with the RESP.</p>
             <div class="project-metrics">
-              <span>Latency: <1ms</span> | <span>Test Cov: 92%</span>
+              <span>Latency: <1ms< /span> | <span>Test Cov: 92%</span>
             </div>
             <div class="project-tech">
               <span>Go</span><span>RESP</span><span>Cache</span>
@@ -332,7 +405,8 @@
         <!-- Stackctl -->
         <div class="project-card glass-panel has-img">
           <div class="project-img-wrapper">
-             <img src="https://github.com/subrotokumar/stackctl/raw/main/public/demo.gif" alt="Stackctl" class="project-banner">
+            <img src="https://github.com/subrotokumar/stackctl/raw/main/public/demo.gif" alt="Stackctl"
+              class="project-banner">
           </div>
           <div class="project-content mt-3">
             <div class="project-status">
@@ -341,10 +415,15 @@
             <div class="project-top">
               <h3 class="project-title">Stackctl CLI</h3>
               <div class="project-links">
-                <a href="https://github.com/subrotokumar/stackctl" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                <a href="https://github.com/subrotokumar/stackctl" target="_blank"><svg width="20" height="20"
+                    viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg></a>
               </div>
             </div>
-            <p class="project-desc">A TUI-powered developer toolkit that accelerates Java development with instant project creation.</p>
+            <p class="project-desc">A TUI-powered developer toolkit that accelerates Java development with instant
+              project creation.</p>
             <div class="project-metrics">
               <span>Downloads: 5k+</span> | <span>Build: Passing</span>
             </div>
@@ -357,7 +436,7 @@
         <!-- LBX -->
         <div class="project-card glass-panel has-img">
           <div class="project-img-wrapper">
-             <img src="./assets/project/lbx.png" alt="LBX" class="project-banner">
+            <img src="./assets/project/lbx.png" alt="LBX" class="project-banner">
           </div>
           <div class="project-content mt-3">
             <div class="project-status">
@@ -366,10 +445,15 @@
             <div class="project-top">
               <h3 class="project-title">LBX</h3>
               <div class="project-links">
-                <a href="https://github.com/subrotokumar/lbx" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                <a href="https://github.com/subrotokumar/lbx" target="_blank"><svg width="20" height="20"
+                    viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg></a>
               </div>
             </div>
-            <p class="project-desc">LoadBalancer in Go supporting service discovery, round-robin request distribution, and automatic failover.</p>
+            <p class="project-desc">LoadBalancer in Go supporting service discovery, round-robin request distribution,
+              and automatic failover.</p>
             <div class="project-metrics">
               <span>Traffic: Routed</span> | <span>Health: 100%</span>
             </div>
@@ -382,7 +466,7 @@
         <!-- Kurumi -->
         <div class="project-card glass-panel has-img">
           <div class="project-img-wrapper">
-             <img src="./assets/project/kurumi.png" alt="Kurumi" class="project-banner">
+            <img src="./assets/project/kurumi.png" alt="Kurumi" class="project-banner">
           </div>
           <div class="project-content mt-3">
             <div class="project-status">
@@ -391,11 +475,21 @@
             <div class="project-top">
               <h3 class="project-title">Kurumi</h3>
               <div class="project-links">
-                <a class="external-link" href="https://play.google.com/store/apps/details?id=com.subrotokumar.kurumi" target="_blank" title="Google Playstore"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg></a>
-                <a href="https://github.com/subrotokumar/kurumi" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                <a class="external-link" href="https://play.google.com/store/apps/details?id=com.subrotokumar.kurumi"
+                  target="_blank" title="Google Playstore"><svg width="20" height="20" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                  </svg></a>
+                <a href="https://github.com/subrotokumar/kurumi" target="_blank"><svg width="20" height="20"
+                    viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg></a>
               </div>
             </div>
-            <p class="project-desc">A sleek AniList client powered by GraphQL. Effortlessly discover and track anime and manga.</p>
+            <p class="project-desc">A sleek AniList client powered by GraphQL. Effortlessly discover and track anime and
+              manga.</p>
             <div class="project-metrics">
               <span>Play Store Live</span> | <span>Rating: 4.8</span>
             </div>
@@ -408,7 +502,7 @@
         <!-- Comet -->
         <div class="project-card glass-panel has-img">
           <div class="project-img-wrapper">
-             <img src="./assets/project/comet.png" alt="Comet" class="project-banner">
+            <img src="./assets/project/comet.png" alt="Comet" class="project-banner">
           </div>
           <div class="project-content mt-3">
             <div class="project-status">
@@ -417,7 +511,11 @@
             <div class="project-top">
               <h3 class="project-title">Comet</h3>
               <div class="project-links">
-                <a href="https://github.com/subrotokumar/comet" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                <a href="https://github.com/subrotokumar/comet" target="_blank"><svg width="20" height="20"
+                    viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg></a>
               </div>
             </div>
             <p class="project-desc">A secure cryptocurrency wallet with support for ERC20 & NFT interactions.</p>
@@ -433,7 +531,7 @@
         <!-- Helios -->
         <div class="project-card glass-panel has-img">
           <div class="project-img-wrapper">
-             <img src="./assets/project/helios.png" alt="Helios" class="project-banner">
+            <img src="./assets/project/helios.png" alt="Helios" class="project-banner">
           </div>
           <div class="project-content mt-3">
             <div class="project-status">
@@ -442,10 +540,15 @@
             <div class="project-top">
               <h3 class="project-title">Helios</h3>
               <div class="project-links">
-                <a href="https://github.com/subrotokumar/helios" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                <a href="https://github.com/subrotokumar/helios" target="_blank"><svg width="20" height="20"
+                    viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg></a>
               </div>
             </div>
-            <p class="project-desc">A lightweight Python web framework built from scratch on top of WSGI for simplifying backend API development.</p>
+            <p class="project-desc">A lightweight Python web framework built from scratch on top of WSGI for simplifying
+              backend API development.</p>
             <div class="project-metrics">
               <span>Build: Passing</span> | <span>PyPI Active</span>
             </div>
@@ -458,7 +561,7 @@
         <!-- Docsync -->
         <div class="project-card glass-panel has-img">
           <div class="project-img-wrapper">
-             <img src="./assets/project/docsync.png" alt="Docsync" class="project-banner">
+            <img src="./assets/project/docsync.png" alt="Docsync" class="project-banner">
           </div>
           <div class="project-content mt-3">
             <div class="project-status">
@@ -467,7 +570,11 @@
             <div class="project-top">
               <h3 class="project-title">Docsync</h3>
               <div class="project-links">
-                <a href="https://github.com/subrotokumar/doc-sync" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                <a href="https://github.com/subrotokumar/doc-sync" target="_blank"><svg width="20" height="20"
+                    viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg></a>
               </div>
             </div>
             <p class="project-desc">Google Docs-style web app supporting real-time text editing using Socket.IO.</p>
@@ -483,7 +590,7 @@
         <!-- 1inch DEX -->
         <div class="project-card glass-panel has-img">
           <div class="project-img-wrapper">
-             <img src="/assets/project/1inchdex.png" alt="1Inch DEX" class="project-banner">
+            <img src="/assets/project/1inchdex.png" alt="1Inch DEX" class="project-banner">
           </div>
           <div class="project-content mt-3">
             <div class="project-status">
@@ -492,11 +599,20 @@
             <div class="project-top">
               <h3 class="project-title">1Inch DEX</h3>
               <div class="project-links">
-                <a class="external-link" href="https://fascinating-empanada-ff7997.netlify.app/" target="_blank" title="Deployed App"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/></svg></a>
-                <a href="https://github.com/subrotokumar/1inch-dex" target="_blank"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                <a class="external-link" href="https://fascinating-empanada-ff7997.netlify.app/" target="_blank"
+                  title="Deployed App"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                  </svg></a>
+                <a href="https://github.com/subrotokumar/1inch-dex" target="_blank"><svg width="20" height="20"
+                    viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg></a>
               </div>
             </div>
-            <p class="project-desc">A token swap application enabling seamless exchange of 13 crypto tokens with MetaMask integration.</p>
+            <p class="project-desc">A token swap application enabling seamless exchange of 13 crypto tokens with
+              MetaMask integration.</p>
             <div class="project-metrics">
               <span>Web3: Connected</span> | <span>Smart Contract: OK</span>
             </div>
@@ -509,31 +625,45 @@
     </section>
 
     <section id="contact" class="section fade-in">
-      <div class="section-header text-center" style="margin-bottom: 20px;">
-        <h2 style="justify-content: center;"><span class="text-accent">05.</span> <span class="glitch-text" data-value="Init Handshake">Init Handshake</span></h2>
+      <div class="section-header text-center">
+        <h2><span class="text-accent">05.</span> <span class="glitch-text" data-value="Init Handshake">Init
+            Handshake</span></h2>
       </div>
       <div class="contact-terminal glass-panel">
         <div class="terminal-header">
           <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-          <span class="terminal-title">~/contact - HTTP 200 OK</span>
+          <span class="terminal-title">~/contact - bash</span>
         </div>
         <div class="terminal-body">
           <div class="cmd-line">
-            <span class="prompt">$</span> curl -X POST https://subrotokumar.dev/api/contact \
+            <span class="prompt">subroto@dev:~$</span> curl -X POST https://subrotokumar.dev/api/contact \
           </div>
           <div class="cmd-line indented">
             -H "Content-Type: application/json" \
           </div>
           <div class="cmd-line indented">
-            -d '{"message": "Let\'s build something amazing."}'
+            -d '{"action": "init_handshake"}'
           </div>
-          <br>
-          <div class="json-response">
-            {<br>
-            &nbsp;&nbsp;<span class="json-key">"status"</span>: <span class="json-string">"ready for new opportunities"</span>,<br>
-            &nbsp;&nbsp;<span class="json-key">"email"</span>: <a href="mailto:subrotokumar@outlook.in" class="json-link">"subrotokumar@outlook.in"</a>,<br>
-            &nbsp;&nbsp;<span class="json-key">"action"</span>: <a href="mailto:subrotokumar@outlook.in" class="btn btn-primary btn-small">Execute Handshake</a><br>
-            }
+
+          <div class="cmd-output">
+            <div class="http-status">HTTP/2 200 OK</div>
+            <div class="json-response">
+              <pre><code>{
+  <span class="json-key">"status"</span>: <span class="json-string">"Ready for new opportunities"</span>,
+  <span class="json-key">"email"</span>: <span class="json-link">"subrotokumar@outlook.in"</span>,
+  <span class="json-key">"availability"</span>: <span class="json-string">"Remote / Full-time / Relocate"</span>
+}</code></pre>
+            </div>
+          </div>
+
+          <div class="terminal-action">
+            <a href="mailto:subrotokumar@outlook.in" class="btn btn-primary">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              Execute Handshake
+            </a>
           </div>
         </div>
       </div>
@@ -553,19 +683,29 @@
     <div class="cmd-modal">
       <div class="cmd-header">
         <span class="prompt">~/$</span>
-        <input type="text" id="cmd-input" placeholder="Type a command or search... (e.g. goto projects)" autocomplete="off">
+        <input type="text" id="cmd-input" placeholder="Type a command or search... (e.g. goto projects)"
+          autocomplete="off">
       </div>
       <div class="cmd-body">
         <ul id="cmd-list">
-          <li class="cmd-item active" data-action="goto" data-target="#about">goto about <span class="cmd-shortcut">Enter</span></li>
-          <li class="cmd-item" data-action="goto" data-target="#experience">goto experience <span class="cmd-shortcut">Enter</span></li>
-          <li class="cmd-item" data-action="goto" data-target="#skills">goto skills <span class="cmd-shortcut">Enter</span></li>
-          <li class="cmd-item" data-action="goto" data-target="#projects">goto projects <span class="cmd-shortcut">Enter</span></li>
-          <li class="cmd-item" data-action="goto" data-target="#contact">goto contact <span class="cmd-shortcut">Enter</span></li>
-          <li class="cmd-item" data-action="link" data-target="https://resume.subrotokumar.dev">fetch resume <span class="cmd-shortcut">Enter</span></li>
-          <li class="cmd-item" data-action="easter" data-target="rm">sudo rm -rf / <span class="cmd-shortcut">Enter</span></li>
+          <li class="cmd-item active" data-action="goto" data-target="#about">goto about <span
+              class="cmd-shortcut">Enter</span></li>
+          <li class="cmd-item" data-action="goto" data-target="#experience">goto experience <span
+              class="cmd-shortcut">Enter</span></li>
+          <li class="cmd-item" data-action="goto" data-target="#skills">goto skills <span
+              class="cmd-shortcut">Enter</span></li>
+          <li class="cmd-item" data-action="goto" data-target="#projects">goto projects <span
+              class="cmd-shortcut">Enter</span></li>
+          <li class="cmd-item" data-action="goto" data-target="#contact">goto contact <span
+              class="cmd-shortcut">Enter</span></li>
+          <li class="cmd-item" data-action="link" data-target="https://resume.subrotokumar.dev">fetch resume <span
+              class="cmd-shortcut">Enter</span></li>
+          <li class="cmd-item" data-action="easter" data-target="rm">sudo rm -rf / <span
+              class="cmd-shortcut">Enter</span></li>
         </ul>
-        <div id="cmd-output" style="display: none; font-family: var(--font-mono); color: var(--red); padding: 10px; margin-top: 10px; border-top: 1px solid var(--border-color);"></div>
+        <div id="cmd-output"
+          style="display: none; font-family: var(--font-mono); color: var(--red); padding: 10px; margin-top: 10px; border-top: 1px solid var(--border-color);">
+        </div>
       </div>
       <div class="cmd-footer">
         <span><kbd>↑</kbd> <kbd>↓</kbd> navigate</span>
@@ -577,4 +717,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
