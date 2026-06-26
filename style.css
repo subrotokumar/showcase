@@ -486,7 +486,7 @@ a:hover {
 }
 
 .timeline-content {
-  padding: 30px;
+  padding: 20px 24px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -517,11 +517,11 @@ a:hover {
 
 .job-tasks li {
   position: relative;
-  padding-left: 24px;
-  margin-bottom: 16px;
+  padding-left: 20px;
+  margin-bottom: 8px;
   color: var(--text-muted);
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .job-tasks li::before {
@@ -546,29 +546,29 @@ a:hover {
 }
 
 .skill-category {
-  padding: 30px;
+  padding: 20px;
 }
 
 .skill-category h3 {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-family: var(--font-mono);
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
 }
 
 .skill-tags span {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
   background: var(--tag-bg);
-  padding: 10px 16px;
-  border-radius: 20px;
-  font-size: 0.9rem;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 0.8rem;
   font-family: var(--font-mono);
   border: 1px solid var(--border-color);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -584,8 +584,8 @@ a:hover {
 }
 
 .skill-tags img {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
 }
 
 /* Projects Section */
@@ -1243,7 +1243,7 @@ kbd {
 
 .compact-grid {
   column-count: 2;
-  column-gap: 24px;
+  column-gap: 16px;
   display: block;
 }
 
@@ -1253,7 +1253,7 @@ kbd {
   position: relative;
   overflow: hidden;
   break-inside: avoid;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   display: inline-block;
   width: 100%;
 }

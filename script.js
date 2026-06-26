@@ -622,12 +622,14 @@ function updateThemeIcon(isLight) {
 
 // Initialize theme early
 const savedTheme = localStorage.getItem('theme');
-const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-const isLight = savedTheme === 'light' || (!savedTheme && prefersLight);
+const isLight = savedTheme !== 'dark';
 
 if (isLight) {
   document.documentElement.classList.add('light');
   document.documentElement.classList.remove('dark');
+} else {
+  document.documentElement.classList.add('dark');
+  document.documentElement.classList.remove('light');
 }
 
 // Ensure icons match on load
