@@ -31,14 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
 function initJobTasksCollapsible() {
   const jobTaskLists = document.querySelectorAll('.job-tasks');
   jobTaskLists.forEach(ul => {
-    if (ul.children.length > 6) {
+    if (ul.children.length > 4) {
       ul.classList.add('collapsible');
       const btn = document.createElement('button');
       btn.className = 'expand-btn';
-      btn.textContent = 'Show ' + (ul.children.length - 6) + ' more';
+      btn.textContent = 'Show ' + (ul.children.length - 4) + ' more';
       btn.onclick = () => {
         const isExpanded = ul.classList.toggle('expanded');
-        btn.textContent = isExpanded ? 'Show less' : 'Show ' + (ul.children.length - 6) + ' more';
+        btn.textContent = isExpanded ? 'Show less' : 'Show ' + (ul.children.length - 4) + ' more';
       };
       ul.parentNode.insertBefore(btn, ul.nextSibling);
     }

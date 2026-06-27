@@ -538,10 +538,10 @@ a:hover {
   font-weight: 600;
 }
 
-.job-tasks.collapsible li:nth-child(n+7) {
+.job-tasks.collapsible li:nth-child(n+5) {
   display: none;
 }
-.job-tasks.collapsible.expanded li:nth-child(n+7) {
+.job-tasks.collapsible.expanded li:nth-child(n+5) {
   display: list-item;
 }
 
