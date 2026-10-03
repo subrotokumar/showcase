@@ -47,11 +47,10 @@ function initJobTasksCollapsible() {
 
 // Typing Animation
 const roles = [
-  "Backend Engineer (Go,Java,Python)",
-  "Kubernetes Administrator",
-  "DevOps Engineer",
-  "MLOps Engineer",
-  "Cloud Architect"
+  "Backend Engineer",
+  "Cloud Native Engineer",
+  "Cloud & DevOps Engineer",
+  "AI Engineer",
 ];
 
 const typedText = document.getElementById("typed-text");
