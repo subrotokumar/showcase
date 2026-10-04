@@ -199,11 +199,11 @@ a:hover {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 20px 10vw;
+  padding: 5px 10vw;
   z-index: 100;
   background: var(--nav-bg);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 0.7px solid var(--border-color);
   transition: all 0.3s ease;
 }
 
@@ -247,6 +247,13 @@ a:hover {
 .nav-special {
   border: 1px solid var(--accent);
   padding: 8px 16px;
+  border-radius: 4px;
+  color: var(--accent) !important;
+}
+
+li .nav-special {
+  border: 0.7px solid var(--accent);
+  padding: 4px 10px;
   border-radius: 4px;
   color: var(--accent) !important;
 }
@@ -383,6 +390,7 @@ a:hover {
 
 .github {
   margin-top: 4.5px !important;
+  margin-right: 4px !important;
 }
 
 .social-links a {
@@ -746,7 +754,7 @@ footer p {
   background: transparent;
   border: 1px solid var(--border-color);
   color: var(--text-main);
-  padding: 8px 12px;
+  padding: 6px 10px;
   border-radius: 6px;
   cursor: pointer;
   display: flex;
