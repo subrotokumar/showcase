@@ -377,9 +377,17 @@ a:hover {
 .social-links {
   display: flex;
   gap: 20px;
+  justify-content: start;
+  align-items: start;
+}
+
+.github {
+  margin-top: 4.5px !important;
 }
 
 .social-links a {
+  display: flex;
+
   color: var(--text-muted);
   transition: all 0.3s ease;
 }
