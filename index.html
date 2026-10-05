@@ -102,7 +102,8 @@
           <p class="hero-subtitle">
             Software Engineer with expertise in building and operating cloud-native systems and AI-powered
             Application
-            at production scale on multi-cloud environments (AWS|Azure). Specializes in Applied AI, Kubernetes, Distributed Systems, Cloud Architecture, DevOps, and
+            at production scale on multi-cloud environments (AWS|Azure). Specializes in Applied AI, Kubernetes,
+            Distributed Systems, Cloud Architecture, DevOps, and
             Multi-Cloud engineering.
           </p>
           <div class="hero-actions">
@@ -155,7 +156,8 @@
             <strong>Kubernetes Administration</strong>, and <strong>Distributed Systems</strong>. My expertise lies in
             designing
             scalable, event-driven
-            microservices and shipping zero-downtime GitOps pipelines across multi-cloud environments like AWS and Azure.
+            microservices and shipping zero-downtime GitOps pipelines across multi-cloud environments like AWS and
+            Azure.
           </p>
           <p>
             Beyond traditional infrastructure, I architect robust backend systems that power modern AI, from highly
@@ -209,30 +211,45 @@
               </div>
             </div>
             <ul class="job-tasks mt-3">
-              <li>Owned end-to-end <strong>GitOps</strong> delivery on <strong>AKS/EKS</strong>: authored Helm charts,
-                configured ArgoCD sync policies, and enforced GitLab CI gates with Trivy and SonarQube, achieving 25%
-                faster rollouts with full uptime across 12 months.</li>
-              <li>Eliminated config drift across 100% of production clusters by migrating NGINX Ingress to <strong>NGINX
-                  Gateway Fabric</strong> via auditable IaC, standardizing TLS termination and cutting routing incidents
-                by 80%.</li>
-              <li>Built a provider-agnostic API gateway in <strong>Go</strong> unifying Azure OpenAI, AWS Bedrock, and
-                Ollama behind one REST interface, enabling zero-code model switching and saving 40+ engineering hours
-                per integration cycle.</li>
-              <li>Designed a Kafka-backed event-driven <strong>Spring Boot</strong> microservice routing 3,000+ agent
-                incident tickets from ServiceNow via consumer-group partitioning, sustaining full message durability and
-                cutting manual dispatch by 60%.</li>
-              <li>Deployed <strong>Kubeflow Pipelines</strong> on AKS for ML workflow orchestration, standardizing model
-                training DAGs across 3 data science teams and cutting experiment turnaround by 35%.</li>
-              <li>Scaled a <strong>RAG platform</strong> from 0 to 17,000+ MAU on AKS by tuning HNSW parameters on
-                PGVector and building a custom query planner, sustaining sub-50 ms p99 latency under production load.
+              <li>Built a self-healing automation engine correlating <strong>Grafana</strong>
+                webhook alerts with <strong>ServiceNow</strong> incidents to auto-remediate, reviving
+                <strong>Kubernetes</strong> pods and Linux services and retriggering failed Azure Data Factory
+                pipelines.
               </li>
-              <li>Instrumented a platform-wide observability stack on <strong>OpenTelemetry</strong> and Grafana
-                tracking p99 latency and SLO burn rates, compressing MTTD from hours to under 5 minutes.</li>
-              <li>Rolled out a fault-tolerant <strong>Azure Functions</strong> ingestion pipeline for 5+ file formats
-                with exponential-backoff retries and dead-letter queue recovery, maintaining complete data integrity
-                across all production runs.</li>
-              <li>Mentored 2 junior engineers on Kubernetes operators, Helm, and GitOps; authored runbooks that reduced
-                new-hire onboarding time by 30%.</li>
+
+              <li>Built a Spring powered <strong>Kafka</strong>-backed event-driven routing engine that auto-assigns
+                <strong>3,000+ ServiceNow tickets/week</strong> to support staff based on <strong>availability,
+                  skillset, shift, and ticket type</strong>, cutting manual dispatch effort by <strong>60%</strong>.
+              </li>
+
+
+              <li>Architected <strong>GitOps</strong> delivery for <strong>AKS/EKS</strong> production
+                <strong>Kubernetes</strong> clusters with Helm, <strong>ArgoCD</strong> rollback strategy, and
+                <strong>GitLab CI</strong> security gates, cutting release lead time <strong>25%</strong> at
+                <strong>100% uptime</strong>.
+              </li>
+
+              <li>Designed and shipped a provider-agnostic <strong>LLM API gateway</strong> unifying <strong>Azure
+                  OpenAI</strong>, <strong>AWS Bedrock</strong>, and Ollama behind one REST contract, with
+                <strong>OTel</strong>-based tracing, per-team token/cost metering, and rate limiters to cap spend.
+              </li>
+
+              <li>Deployed and operated <strong>Kubeflow Pipelines</strong> on <strong>AKS</strong> to orchestrate ML
+                training workflows, standardizing DAGs across <strong>3 data science teams</strong> and reducing
+                experiment turnaround time by <strong>35%</strong>.</li>
+
+              <li>Instrumented a platform-wide observability stack on <strong>OpenTelemetry</strong> and
+                <strong>Grafana</strong>, compressing mean-time-to-detect (<strong>MTTD</strong>) from hours to
+                <strong>under 5 minutes</strong>.
+              </li>
+
+              <li>Engineered a fault-tolerant serverless, event-driven context-aware document ingestion pipeline
+                supporting <strong>8+
+                  file formats</strong>, maintaining <strong>100% data integrity</strong> across all production runs.
+              </li>
+
+              <li><strong>Recognized with Capgemini's <strong>"Value Creator" Award</strong> for contributions to
+                  internal AI initiatives and technical leadership.</strong></li>
             </ul>
           </div>
         </div>
@@ -251,12 +268,16 @@
               </div>
             </div>
             <ul class="job-tasks mt-3">
-              <li>Designed and implemented scalable cloud topologies across <strong>AWS</strong> compute, storage, and
-                networking layers (EC2, S3, RDS).</li>
-              <li>Automated infrastructure provisioning and state management utilizing <strong>Terraform</strong> (IaC).
-              </li>
+              <li>Designed <strong>AWS</strong> cloud architectures across EC2, S3, RDS, EKS and CloudFront to support
+                reliable,
+                high performance apps.</li>
+              <li>Automated infrastructure provisioning with <strong>Terraform</strong>, enabling consistent, version
+                controlled
+                cloud deployments.</li>
               <li>Optimized container orchestration and deployment strategies using <strong>AWS ECS</strong> and
                 <strong>Kubernetes (EKS)</strong>.
+              </li>
+              <li>Scored 88/100 in the LTIMindtree Ignite 2023 certification assessment on AWS and DevOps practices.
               </li>
             </ul>
           </div>
@@ -276,6 +297,15 @@
               </div>
             </div>
             <ul class="job-tasks mt-3">
+              <li>Built and shipped <strong>4 cross-platform mobile applications</strong> (both <strong>Android</strong>
+                &amp; <strong>iOS</strong>) to production from scratch, owning each one from
+                <strong>architecture</strong> and <strong>API integration</strong> through <strong>store
+                  release</strong>.
+              </li>
+
+              <li>Managed the full app lifecycle, including <strong>state management</strong>, <strong>backend
+                  integration</strong>, and <strong>release builds</strong>, and delivered <strong>post-launch
+                  fixes</strong> based on crash reports and user feedback.</li>
               <li>Spearheaded the integration of <strong>DigiLocker e-KYC</strong> utilizing Flutter and OAuth 2.0,
                 significantly streamlining user onboarding.</li>
               <li>Architected and deployed robust modules including dynamic coupon engines, automated GST computation,
@@ -445,7 +475,8 @@
               <span>Build: Passing</span> | <span>Uptime: 99.9%</span>
             </div>
             <div class="project-tech">
-              <span>Go</span><span>K8s</span><span>KEDA</span><span>FFmpeg</span><span>Istio</span>
+              <span>Go</span><span>K8s</span><span>AWS</span><span>KEDA</span><span>FFmpeg</span><span>Istio</span>
+              <span>K8s</span><span>Redis</span><span>S3</span><span>Postgres</span>
             </div>
           </div>
         </div>
@@ -556,7 +587,7 @@
               <span>Latency: <1ms< /span> | <span>Test Cov: 92%</span>
             </div>
             <div class="project-tech">
-              <span>Go</span><span>RESP</span><span>Concurrency</span><span>Persistence</span>
+              <span>Go</span><span>RESP</span><span>Concurrency</span><span>Persistence</span><span>AOF</span><span>RDB</span>
             </div>
           </div>
         </div>
@@ -589,6 +620,39 @@
             <div class="project-tech">
               <span>React</span><span>Webcontainers</span><span>Go</span><span>Python</span><span>gRPC</span><span>Postgres</span><span>Kubernetes</span><span>Applied
                 AI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comet -->
+        <div class="project-card glass-panel has-img">
+          <div class="project-img-wrapper">
+            <img src="https://github.com/subrotokumar/dxdeployer/raw/main/diagram/dxd_platfrom_as_a_code.png"
+              alt="DxDeployer" class="project-banner">
+          </div>
+          <div class="project-content mt-3">
+            <!-- <div class="project-status">
+              <span class="status-dot pulsing"></span> <span class="status-text">Production</span>
+            </div> -->
+            <div class="project-top">
+              <h3 class="project-title">Comet</h3>
+              <div class="project-links">
+                <a href="https://github.com/subrotokumar/dxdeployer" target="_blank">
+                  <img src="assets/icon/Github.svg" width="23" alt="Github">
+                </a>
+              </div>
+            </div>
+            <p class="project-desc">
+              <strong>Platform as a Service (PaaS)</strong><br>
+              A Cutting-edge Platform as a Service (PaaS) designed specifically for deploying React applications
+              seamlessly to production environments.
+            </p>
+            <div class="project-metrics">
+              <span>Mainnet Active</span> | <span>Security: OK</span>
+            </div>
+            <div class="project-tech">
+              <span>Java</span><span>Spring</span><span>AWS</span><span>Docker</span><span>Kafka</span><span>Grafana</span><span>Prometheus</span>
+              <span>OpenTelemetry</span><span>Redis</span><span>MongoDB</span>
             </div>
           </div>
         </div>
