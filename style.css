@@ -1556,3 +1556,14 @@ kbd {
   background-color: rgba(56, 189, 248, 0.15);
   border-color: transparent;
 }
+
+@media (max-width: 768px) {
+  .fade-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .project-card.has-img .project-content {
+    padding: 18px;
+  }
+}
