@@ -56,7 +56,7 @@ const roles = [
   "Backend Engineer",
   "Cloud Native Engineer",
   "Cloud & DevOps Engineer",
-  "AI Engineer",
+  "Applied AI Engineer",
 ];
 
 const typedText = document.getElementById("typed-text");
